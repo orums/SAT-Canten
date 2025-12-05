@@ -1,0 +1,3876 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Cantusprügel</title>
+    
+    <!-- Favicon für alle Plattformen -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1410'/%3E%3Cpath d='M45 25 Q 40 25 35 30 Q 30 35 30 40 Q 30 45 35 50 Q 40 55 45 55 Q 50 55 55 50 Q 60 45 60 40 L 60 75 Q 60 80 55 85 Q 50 90 45 90 Q 35 90 30 85 Q 25 80 25 75 Q 25 70 30 65 Q 35 60 40 60 Q 45 60 50 65 L 50 40 Q 50 35 45 30 Q 40 25 35 25' fill='none' stroke='%23d4a574' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='60' y1='15' x2='60' y2='40' stroke='%23d4a574' stroke-width='3'/%3E%3Cellipse cx='45' cy='75' rx='12' ry='8' fill='%23d4a574'/%3E%3C/svg%3E">
+    
+    <!-- iOS Icons -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%231a1410'/%3E%3Cpath d='M80 45 Q 70 45 60 55 Q 50 65 50 75 Q 50 85 60 95 Q 70 105 80 105 Q 90 105 100 95 Q 110 85 110 75 L 110 135 Q 110 145 100 155 Q 90 165 80 165 Q 60 165 50 155 Q 40 145 40 135 Q 40 125 50 115 Q 60 105 70 105 Q 80 105 90 115 L 90 75 Q 90 65 80 55 Q 70 45 60 45' fill='none' stroke='%23d4a574' stroke-width='5' stroke-linecap='round'/%3E%3Cline x1='110' y1='25' x2='110' y2='75' stroke='%23d4a574' stroke-width='5'/%3E%3Cellipse cx='80' cy='135' rx='20' ry='14' fill='%23d4a574'/%3E%3C/svg%3E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SAT Cantusprügel">
+    
+    <!-- Android/PWA Meta-Tags -->
+    <meta name="theme-color" content="#1a1410">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="SAT Cantusprügel">
+    
+    <!-- Web App Manifest für Android -->
+    <link rel="manifest" href="data:application/json,%7B%22name%22%3A%22SAT%20Cantuspr%C3%BCgel%22%2C%22short_name%22%3A%22SAT%20Liederbuch%22%2C%22description%22%3A%22SAT%20Cantuspr%C3%BCgel%20-%20Digitales%20Liederbuch%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%231a1410%22%2C%22theme_color%22%3A%22%231a1410%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20192%20192%27%253E%253Crect%20width%3D%27192%27%20height%3D%27192%27%20fill%3D%27%25231a1410%27%2F%253E%253Cpath%20d%3D%27M86%2048%20Q%2076%2048%2066%2058%20Q%2056%2068%2056%2078%20Q%2056%2088%2066%2098%20Q%2076%20108%2086%20108%20Q%2096%20108%20106%2098%20Q%20116%2088%20116%2078%20L%20116%20144%20Q%20116%20154%20106%20164%20Q%2096%20174%2086%20174%20Q%2066%20174%2056%20164%20Q%2046%20154%2046%20144%20Q%2046%20134%2056%20124%20Q%2066%20114%2076%20114%20Q%2086%20114%2096%20124%20L%2096%2078%20Q%2096%2068%2086%2058%20Q%2076%2048%2066%2048%27%20fill%3D%27none%27%20stroke%3D%27%2523d4a574%27%20stroke-width%3D%276%27%20stroke-linecap%3D%27round%27%2F%253E%253Cline%20x1%3D%27116%27%20y1%3D%2728%27%20x2%3D%27116%27%20y2%3D%2778%27%20stroke%3D%27%2523d4a574%27%20stroke-width%3D%276%27%2F%253E%253Cellipse%20cx%3D%2786%27%20cy%3D%27144%27%20rx%3D%2722%27%20ry%3D%2716%27%20fill%3D%27%2523d4a574%27%2F%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%2C%22purpose%22%3A%22any%20maskable%22%7D%2C%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20512%20512%27%253E%253Crect%20width%3D%27512%27%20height%3D%27512%27%20fill%3D%27%25231a1410%27%2F%253E%253Cpath%20d%3D%27M230%20128%20Q%20200%20128%20170%20158%20Q%20140%20188%20140%20218%20Q%20140%20248%20170%20278%20Q%20200%20308%20230%20308%20Q%20260%20308%20290%20278%20Q%20320%20248%20320%20218%20L%20320%20384%20Q%20320%20414%20290%20444%20Q%20260%20474%20230%20474%20Q%20170%20474%20140%20444%20Q%20110%20414%20110%20384%20Q%20110%20354%20140%20324%20Q%20170%20294%20200%20294%20Q%20230%20294%20260%20324%20L%20260%20218%20Q%20260%20188%20230%20158%20Q%20200%20128%20170%20128%27%20fill%3D%27none%27%20stroke%3D%27%2523d4a574%27%20stroke-width%3D%2716%27%20stroke-linecap%3D%27round%27%2F%253E%253Cline%20x1%3D%27320%27%20y1%3D%2778%27%20x2%3D%27320%27%20y2%3D%27218%27%20stroke%3D%27%2523d4a574%27%20stroke-width%3D%2716%27%2F%253E%253Cellipse%20cx%3D%27230%27%20cy%3D%27384%27%20rx%3D%2760%27%20ry%3D%2742%27%20fill%3D%27%2523d4a574%27%2F%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #1a1410;
+            --bg-secondary: #2a241d;
+            --bg-tertiary: #3a3328;
+            --text-primary: #f5ede0;
+            --text-secondary: #d4c4a8;
+            --accent: #d4a574;
+            --accent-bright: #e8c298;
+            --shadow: rgba(0, 0, 0, 0.5);
+            --line-marker: #8a7a64;
+            --font-scale: 1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(212, 165, 116, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(212, 165, 116, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        #root {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(26, 20, 16, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--accent);
+            padding: 1.2rem 1rem 0.8rem;
+            z-index: 100;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .header-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: calc(1.8rem * var(--font-scale));
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-align: center;
+            margin-bottom: 0.7rem;
+            background: linear-gradient(135deg, var(--accent-bright) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeIn 0.8s ease-out;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .header-title:hover,
+        .header-title:active {
+            transform: scale(1.02);
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            animation: fadeIn 0.8s ease-out 0.2s backwards;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-size: calc(1rem * var(--font-scale));
+            font-family: 'Crimson Text', serif;
+            background: var(--bg-secondary);
+            border: 1px solid var(--bg-tertiary);
+            border-radius: 12px;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.15);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        .search-info {
+            text-align: center;
+            margin-top: 0.4rem;
+            font-size: calc(0.85rem * var(--font-scale));
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .main-content {
+            padding: 1.5rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out 0.4s backwards;
+        }
+
+        .song-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .song-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--bg-tertiary);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .song-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .song-item:hover::before,
+        .song-item:active::before {
+            opacity: 1;
+        }
+
+        .song-item:hover,
+        .song-item:active {
+            border-color: var(--accent);
+            transform: translateX(4px);
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.2);
+        }
+
+        .song-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: calc(1.3rem * var(--font-scale));
+            font-weight: 600;
+            color: var(--accent-bright);
+            position: relative;
+        }
+
+        .song-preview {
+            margin-top: 0.4rem;
+            font-size: calc(0.9rem * var(--font-scale));
+            color: var(--text-secondary);
+            opacity: 0.8;
+            line-height: 1.3;
+            max-height: 2.6em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .song-preview mark {
+            background-color: rgba(212, 165, 116, 0.3);
+            color: var(--accent-bright);
+            padding: 0 0.2em;
+            border-radius: 3px;
+        }
+
+        .song-detail {
+            animation: slideIn 0.4s ease-out;
+        }
+
+        .controls-bar {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent);
+            color: var(--accent-bright);
+            padding: 0.7rem 1.2rem;
+            border-radius: 12px;
+            font-family: 'Crimson Text', serif;
+            font-size: calc(1rem * var(--font-scale));
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover,
+        .back-button:active {
+            background: var(--accent);
+            color: var(--bg-primary);
+            transform: translateX(-4px);
+        }
+
+        .zoom-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: auto;
+        }
+
+        .zoom-button {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent);
+            color: var(--accent-bright);
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zoom-button:hover,
+        .zoom-button:active {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .zoom-button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .zoom-info {
+            font-size: calc(0.9rem * var(--font-scale));
+            color: var(--text-secondary);
+            min-width: 3rem;
+            text-align: center;
+        }
+
+        .song-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 8px 30px var(--shadow);
+            position: relative;
+        }
+
+        .song-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: calc(1.9rem * var(--font-scale));
+            font-weight: 700;
+            color: var(--accent-bright);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            letter-spacing: 0.03em;
+        }
+
+        .info-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 8px 30px var(--shadow);
+            text-align: center;
+        }
+
+        .info-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: calc(2.2rem * var(--font-scale));
+            font-weight: 700;
+            color: var(--accent-bright);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.03em;
+        }
+
+        .info-content p {
+            font-size: calc(1.2rem * var(--font-scale));
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .stanza {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .stanza-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.6rem;
+            gap: 0.7rem;
+        }
+
+        .stanza-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: calc(1.5rem * var(--font-scale));
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 2rem;
+            flex-shrink: 0;
+        }
+
+        .stanza-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--accent) 0%, transparent 100%);
+            opacity: 0.5;
+        }
+
+        .stanza-text {
+            padding-left: 0.5rem;
+        }
+
+        .text-line {
+            display: block;
+            margin-bottom: 0.25rem;
+            line-height: 1.55;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .line-text {
+            font-size: calc(1.15rem * var(--font-scale));
+            color: var(--text-primary);
+        }
+
+        .line-marker {
+            color: var(--line-marker);
+            font-size: calc(0.8rem * var(--font-scale));
+            opacity: 0.6;
+            margin-left: 0.5rem;
+        }
+
+        .song-content.flow-mode .stanza-text {
+            font-size: 0;
+            color: var(--text-primary);
+            line-height: 1.7;
+            text-align: left;
+            hyphens: none;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            word-break: normal;
+            overflow-wrap: normal;
+            word-wrap: normal;
+        }
+
+        .song-content.flow-mode .text-line {
+            display: inline;
+            margin-bottom: 0;
+            word-break: normal;
+            overflow-wrap: normal;
+            word-wrap: normal;
+            hyphens: none;
+            -webkit-hyphens: none;
+        }
+
+        .song-content.flow-mode .line-text {
+            font-size: calc(1.15rem * var(--font-scale));
+            word-break: normal;
+            overflow-wrap: normal;
+            word-wrap: normal;
+            hyphens: none;
+            -webkit-hyphens: none;
+        }
+
+        .song-content.flow-mode .line-marker {
+            display: none;
+        }
+
+        .mode-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            font-size: calc(1.2rem * var(--font-scale));
+            color: var(--accent-bright);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+            animation: fadeInOut 1.5s ease-out;
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            20% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            80% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: calc(3.5rem * var(--font-scale));
+            margin-bottom: 0.8rem;
+            opacity: 0.3;
+        }
+
+        .empty-state-text {
+            font-size: calc(1.1rem * var(--font-scale));
+            font-family: 'Crimson Text', serif;
+        }
+
+        .result-count {
+            text-align: center;
+            margin-bottom: 0.8rem;
+            font-size: calc(0.95rem * var(--font-scale));
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .header-title {
+                font-size: calc(2rem * var(--font-scale));
+            }
+
+            .song-content h1 {
+                font-size: calc(2.2rem * var(--font-scale));
+            }
+
+            .line-text {
+                font-size: calc(1.3rem * var(--font-scale));
+            }
+
+            .song-content.flow-mode .stanza-text {
+                font-size: calc(1.3rem * var(--font-scale));
+            }
+
+            .stanza-number {
+                font-size: calc(1.7rem * var(--font-scale));
+            }
+
+            .song-content {
+                padding: 2.5rem 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .line-text {
+                font-size: calc(1.4rem * var(--font-scale));
+            }
+
+            .song-content.flow-mode .stanza-text {
+                font-size: calc(1.4rem * var(--font-scale));
+            }
+
+            .stanza-number {
+                font-size: calc(1.8rem * var(--font-scale));
+            }
+
+            .song-content {
+                padding: 3rem 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: calc(1.5rem * var(--font-scale));
+            }
+
+            .song-content h1 {
+                font-size: calc(1.6rem * var(--font-scale));
+            }
+
+            .line-text {
+                font-size: calc(1.05rem * var(--font-scale));
+            }
+
+            .song-content.flow-mode .stanza-text {
+                font-size: calc(1.05rem * var(--font-scale));
+            }
+
+            .stanza-number {
+                font-size: calc(1.3rem * var(--font-scale));
+            }
+
+            .song-content {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (hover: none) {
+            .song-item:active {
+                background: var(--bg-tertiary);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const { useState, useEffect, useMemo, useRef } = React;
+
+        const SONGS_DATA = `
+# SAT Cantusprügel
+
+SAT Cantusprügel in HTML. Version 18. Stand: 5. Dez. 2025
+
+
+# Hundert Semester
+
+Als ich schlummernd lag heut Nacht, lockten süsse Träume, schimmernd in
+der Jugend Pracht, mich in ferne Räume. Krasses Füchslein sass ich schlank
+in der Kneipe wieder, und in vollem Chore klang laut das Lied der Lieder:
+la: Gaudeamus igitur, iuvenes dum sumus! : post iucundam iuventutem, post
+molestam senectutem : nos habebit humus. :
+
+Tabakswolkenduft umkreist bläulich Rheinweinbecher; desto heller flammt
+der Geist in dem Haupt der Zecher. Füchslein fühlt im Weltenrund sich der
+Schöpfung Krone, und er singt mit keckem Mund und mit keckem Tone:
+laUbi sunt qui ante nos in mundo fuere? Vadite ad superos, transite ad
+inferos, ubi iam fuere.
+
+Jäh erwacht’ ich. – Glockenklar tönt’ mir’s in den Ohren: Heut sind’s runde
+siebzig Jahr, seit du wardst geboren. Heut schon liegen hinter dir der
+Semester hundert! – Hell rieb ich die Augen mir, summte still verwundert:
+laVita nostra brevis est, brevi finietur, venit mors velociter, rapit nos atrociter,
+nemini parcetur.
+
+Schnell vom Lager sprang ich auf, rief: Mir hat das Leben viel in seinem
+kurzen Lauf, Leid und Lust, gegeben. Sei vergessen, was gedrückt mich mit
+Sorg und Plage; heut ein Hoch dem, was beglückt’ meine jungen Tage:
+lavivat academia, vivant professores, vivat membrum quodlibet, vivant
+membra quaelibet, semper sint in flore!
+
+Gold’ne Burschenzeit entflog schnell – dass Gott erbarme! Ledern’
+Philisterium zog mich in dürre Arme. Doch philistern lernt’ ich nicht, hoch,
+auf gold’nen Schwingen, trug mich Lieb’ zum Himmelslicht, jubelnd durft’
+ich singen: laVivant omnes virgines, faciles, formosae! vivant et mulieres,
+tenerae, amabiles, bonae, laboriosae!
+
+Weib und Kinder an der Hand, freut’ ich mich des Lebens; nützlich sein dem
+Vaterland, ward das Ziel des Strebens. Konnte sich’s zum Paradies auch nicht
+ganz gestalten, Treue, die ich ihm erwies, hat’s mir doch gehalten. laVivat et
+res publica et qui illam regit! Vivat nostra civitas, maecenatum caritas, quae
+nos hic protegit!
+
+Im latein’schen Liede sang heut ich alter Knabe meines Lebens ganzen Gang
+von der Wieg’ zum Grabe; komme, wann du willst, Freund Hein, mich zur
+Ruh’ zu bringen; doch wie einst als Füchselein, will der Greis noch singen:
+laPereat tristitia, pereant osores! Pereat diabolus, quivis anti burschius, atque
+irrisores!
+
+
+# O goldne Akademia
+
+Als noch Arkadiens goldne Tage mich jungen Burschen angelacht, wie hab
+ich da in süssem Taumel die frohen Stunden hingebracht; leicht war mein
+Herz und leicht mein Wechsel, die gar zu bald davongerauscht! Und doch
+hätt ich mit keinem Fürsten in jener Seligkeit getauscht; : war selbst ein Fürst
+der Freude ja, o goldne Akademia! :
+
+Zwar tat mein Vater häufig schreiben: mein Sohn, geh ins Kollegium; doch
+oftmals wider meinen Willen bracht mich der Zufall neckisch drum; bald
+galt’s ein Fässchen anzustechen, bald lag ich draussen auf Mensur! Die Lust
+am Zechen und am Pauken liegt in des Burschen Frohnatur. : Wer schilt das
+krasse Füchslein da? O goldne Akademia! :
+
+Ging ich entlang die engen Gassen, aufs Haupt das Cerevis gedrückt, hei, wie
+die schmucken Mädchen lachten, wenn freundlich ich emporgenickt; den
+Weibern war ich wohlgewogen, als stets verliebter Musensohn, gern hätt’ ich
+aller Herz besessen, doch eines war mein eigen schon, : des schönsten
+Mädchens, das ich sah, o goldne Akademia! :
+
+Ach, pfeilschnell flogen die Semester, ein altes Haus nennt man mich heut,
+nun hat auch mir auf meine Locken der Winter seinen Reif gestreut; doch
+nimmer will ich dich vergessen, der holden Freiheit Paradies, die schönste
+Zeit in meinem Leben, da ich noch flotter Bursche hiess; : stets bleib ich dir
+im Geiste nah, o goldne Akademia! :
+
+
+# Donaustrudel
+
+Als wir jüngst in Regensburg waren, sind wir über den Strudel gefahren. Da
+war’n viele Holden, die mit fahren wollten. : Schwäbische, bayrische
+Dirndel, juchheisasa! muss der Schiffsmann fahren. :
+
+Und vom hohen Bergesschlosse kam auf stolzem schwarzem Rosse adlig
+Fräulein Kunigund, wollt’ mitfahr’n über Strudels Grund. Schwäbische usw.
+
+«Schiffsmann, lieber Schiffsmann mein, sollt’s denn so gefährlich sein?
+Schiffsmann, sag’s mir ehrlich, ist’s denn so gefährlich?» Schwäbische usw.
+
+Wem der Myrtenkranz geblieben, landet froh und sicher drüben; wer ihn hat
+verloren, ist dem Tod erkoren. Schwäbische usw.
+
+Als sie auf die Mitt’ gekommen, kam ein grosser Nix geschwommen, nahm
+das Fräulein Kunigund, fuhr mit ihr in des Strudels Grund. Schwäbische usw.
+
+Und ein Mädel von zwölf Jahren ist mit über den Strudel gefahren; weil sie
+noch nicht lieben kunnt’, fuhr sie sicher über Strudels Grund. Schwäbische
+usw.
+
+
+# Lied des Trompeters von Säckingen
+
+Alt-Heidelberg, du feine, du Stadt an Ehren reich, am Neckar und am Rheine,
+kein’ andre kommt dir gleich. Stadt fröhlicher Gesellen, an Weisheit schwer
+und Wein, klar zieh’n des Stromes Wellen, Blauäuglein blitzen
+drein, : Blauäuglein blitzen drein. :
+
+Und kommt aus lindem Süden der Frühling übers Land, so webt er dir aus
+Blüten ein schimmernd’ Brautgewand. Auch mir stehst du geschrieben ins
+Herz gleich einer Braut, es klingt wie junges Lieben dein Name mir so traut.
+
+Und stechen mich die Dornen und wird mir’s drauss’ zu kahl, geb’ ich dem
+Ross die Spornen und reit’ ins Neckartal!
+
+
+# Am Waldesrand ’ne Mühle stand
+
+Am Waldesrand ’ne Mühle stand rumbadibumbadirumbadibadibum, es
+drehte sich das Mühlerad rumbadibumbadirumbadibadibum, es waren in der
+Mühle drin rumbadibumbadirumbadibadibum, der Müller und die Müllerin
+ah ah ah. − Ja du holde kleine Müllerin ah ah ah, ja wie gerne wär ich bei dir
+drin ah ah ah. Ja wie glücklich ich mich fühlte ah ah ah, in deiner kleinen
+Mühle drin ah ah ah!
+
+Da kam des Wegs ein Wandersmann rumbadi ... und klopfte an der Mühle an
+rumbadi ... es öffnet ihm die Müllerin rumbadi ... flugs war er in der Mühle
+drin ah ah ah. – Ja du holde kleine Müllerin usw.
+
+Es löschte aus das Kerzenlicht rumbadi ... was dann geschah, das weiss man
+nicht rumbadi ... es waren in der Mühle drin rumbadi ... der Wandrer und die
+Müllerin ah ah ah. – Ja du holde kleine Müllerin usw.
+
+
+# Warnung vor dem Rhein
+
+An den Rhein, an den Rhein, zieh nicht an den Rhein, mein Sohn, ich rate dir
+gut; da geht dir das Leben zu lieblich ein, da blüht dir zu freudiger Mut!
+
+Siehst die Mädchen so frank und die Männer so frei, als wär’ es ein adlig
+Geschlecht, gleich bist du mit glühender Seele dabei; so dünkt es dich billig
+und recht.
+
+Und zu Schiffe, wie grüssen die Burgen so schön und die Stadt mit dem
+ewigen Dom! In den Bergen, wie klimmst du zu schwindelnden Höh’n und
+blickest hinab in den Strom.
+
+Und im Strome, da tauchet die Nix’ aus dem Grund, und hast du ihr Lächeln
+geseh’n, und sang dir die Lurlei mit bleichem Mund, mein Sohn, so ist es
+gescheh’n.
+
+Dich bezaubert der Laut, dich betöret der Schein, Entzücken fasst dich und
+Graus. Nun singst du nur immer: Am Rhein, am Rhein! und kehrst nicht
+wieder nach Haus.
+
+
+# Alle zerstreut
+
+Auf den Bergen die Burgen, im Tale die Saale, die Mädchen im Städtchen
+einst alles wie heut. Ihr werten Gefährten, wo seid ihr zur Zeit mir, ihr
+Lieben, geblieben? : Ach, alle zerstreut! :
+
+Die einen, sie weinen; die andern, sie wandern; die dritten noch mitten im
+Wechsel der Zeit; auch viele am Ziele, zu den Toten entboten, verdorben,
+gestorben in Lust und in Leid.
+
+Ich alleine, der eine, schau’ wieder hernieder zur Saale im Tale, doch traurig
+und stumm. Eine Linde im Winde, die wiegt sich und biegt sich, rauscht
+schaurig und traurig; ich weiss wohl warum!
+
+
+# Bierlein rinn!
+
+Beim Rosenwirt am Grabentor des Abends um halb sechs den Hammer
+schwingt der Wirt empor und schlägt den Zapfen ex! Das schlurrt und glurrt
+aus feuchter Nacht vom Spundloch in die Kann’, ei seht, wies Antlitz jedem
+lacht, jedwedem Zechersmann: : «Bierlein, rinn! Bierlein, rinn! Was nutzen
+mir die Kreuzerlein, wenn ich gestorben bin!» :
+
+Beim Rosenwirt im Stübel drin, da sitzt ein junges Blut, die schmucke,
+schlanke Kellnerin war ihm noch gestern gut. Doch heute ist sie
+durchgebrannt, fahr wohl, du falsche Hex’! Der Bursch kehrt sein Gesicht
+zur Wand und summt um halber sechs: «Bierlein rinn» usw.
+
+Beim Rosenwirt am Eichentisch, da thront ein braver Greis, die Wangen rot,
+die Augen frisch, die Haare silberweiss! Schlug ihm gleich manchen grossen
+Plan das Schicksal schnöd entzwei − um halber sechs schlägt auch wer an,
+der Alte brummt dabei: «Bierlein rinn» usw.
+
+Beim Rosenwirt am Grabentor, da blüht ein fein Gewächs, das heben wir im
+Glas empor schon abends um halb sechs. Wir heben es gar emsig hoch, wir
+leeren’s auf den Grund − um Mitternacht da klingt es noch, schallt’s noch
+von Mund zu Mund: «Bierlein rinn» usw.
+
+Und schlägt mir einst der Sensenmann den Nagel auf die Truh, rast’ ich von
+harter Lebensbahn, in kühler Grabesruh: dann schwingt bekränzt den Becher
+mir, dem müden Wandersmann, der euch gelehrt den Spruch zum Bier, und
+hebet also an: «Bierlein rinn» usw.
+
+
+# Rheinweinlied
+
+Bekränzt mit Laub den lieben vollen Becher : und trinkt ihn fröhlich leer! : In
+ganz Europia, ihr Herren Zecher, : ist solch ein Wein nicht mehr, ist solch ein
+Wein nicht mehr! :
+
+Er kommt nicht her aus Ungarn noch aus Polen noch wo man franzmänn’sch
+spricht; da mag Sankt Veit, der Ritter, Wein sich holen, wir holen ihn da
+nicht.
+
+Am Rhein, am Rhein, da wachsen unsre Reben: Gesegnet sei der Rhein! Da
+wachsen sie am Ufer hin und geben uns diesen Labewein.
+
+So trinkt ihn denn, und lasst uns allewege uns freu’n und fröhlich sein! Und
+wüssten wir, wo jemand traurig läge, wir gäben ihm den Wein.
+
+
+# Lied eines abziehenden Burschen
+
+Bemooster Bursche zieh’ ich aus, behüt dich Gott, Philisterhaus! : Zur alten
+Heimat geh’ ich ein, muss selber nun Philister sein! :
+
+Fahrt wohl, ihr Strassen grad und krumm! Ich zieh’ nicht mehr in euch
+herum, durchtön’ euch nicht mehr mit Gesang, mit Lärm nicht mehr und
+Sporenklang.
+
+Was wollt ihr Kneipen all von mir? Mein Bleiben ist nicht mehr allhier;
+winkt nicht mit eurem langen Arm, macht mir mein durstig Herz nicht warm.
+
+Ei, grüss euch Gott, Collegia! Wie steht ihr in Parade da! Ihr dumpfen Säle
+gross und klein, jetzt kriegt ihr mich nicht mehr herein.
+
+Auch du, von deinem Giebeldach, siehst mir umsonst, o Karzer, nach! Für
+schlechte Herberg Tag und Nacht sei dir ein Pereat gebracht.
+
+Du aber blüh und schalle noch, leb, alter Schlägerboden, hoch! In dir, du
+treues Ehrenhaus, verfechte sich noch mancher Strauss!
+
+Da komm’ ich, ach! an Liebchens Haus; o Kind, schau noch einmal heraus,
+heraus mit deinen Äuglein klar, mit deinem dunklen Lockenhaar!
+
+Und hast du mich vergessen schon, so wünsch’ ich dir nicht bösen Lohn;
+such dir nur einen Buhlen neu, doch sei er flott, gleich mir, und treu!
+
+Und weiter, weiter geht mein Lauf: tut euch, ihr alten Tore auf! Leicht ist
+mein Sinn, und froh mein Pfad; gehab dich wohl, du Musenstadt!
+
+Ihr Brüder, drängt euch um mich her, macht mir mein leichtes Herz nicht
+schwer! Auf frischem Ross, mit frohem Sang, geleitet mich den Weg entlang!
+
+Im nächsten Dorfe kehret ein, trinkt noch mit mir von einem Wein! Nun
+denn, ihr Brüder, sei’s weil’s muss, das letzte Glas, der letzte Kuss!
+
+
+# Bin ein fahrender Gesell
+
+Bin ein fahrender Gesell, kenne keine Sorgen, labt mich heut ein Felsenquell,
+tut es Rheinwein morgen. Bin ein Ritter lobesam, reit’ auf Schusters Rappen,
+führ’ den lockren Zeisighahn und den Spruch im Wappen. : Nur immer lustig
+Blut und leichten Sinn, futsch ist futsch und hin ist hin! :
+
+Zieh ich in ein Städtchen ein, spür ich’s im Gehirne, wo man trifft den besten
+Wein und die schönste Dirne. Spielmann lächelt wohlgemut, streicht die
+Fiedel schneller, und ich werf’ ihm in den Hut meinen letzten Heller. Nur
+immer lustig usw.
+
+Meister Wirt, darfst heut nicht ruh’n, schlag heraus den Zapfen! Back, Frau
+Wirtin, mir ein Huhn und zum Nachtisch Krapfen! Was ich heut nicht zahlen
+kann, zahlen will ich’s künftig, darum schreibt’s mit Kreide an, Wirt und seid
+vernünftig: Nur immer lustig usw.
+
+Wein dir nicht die Äuglein trüb, Mägdelein, vor Trauer! Fahrender Gesellen
+Lieb’ ist von kurzer Dauer. Fahrender Gesellen Lieb’ endet vor den Toren,
+wein’ dir nicht die Äuglein trüb: hast nicht viel verloren. Nur immer lustig
+usw.
+
+Kommt ein Stern mit einem Schwanz, will die Welt zertrümmern, leiert euren
+Rosenkranz, mich soll’s wenig kümmern. Wird dem Weltenbrand zum Raub
+Berg und Wald und Heide, wird das Wirtshaus auch zu Staub, schwarzes
+Brett und Kreide. Nur immer lustig usw.
+
+
+# Burschen heraus!
+
+Burschen heraus! Lasset es schallen von Haus zu Haus! Wenn der Lerche
+Silberschlag grüsst des Maien ersten Tag, dann heraus, und fragt nicht viel,
+frisch mit Lied und Lautenspiel! Burschen heraus!
+
+Burschen heraus! Lasset es schallen von Haus zu Haus! Ruft um Hilf’ die
+Poesei gegen Zopf und Philisterei, dann heraus bei Tag und Nacht, bis sie
+wieder frei gemacht! Burschen heraus!
+
+Burschen heraus! Lasset es schallen von Haus zu Haus! Wenn es gilt fürs
+Vaterland, treu die Klingen dann zur Hand, und heraus mit mut’gem Sang,
+wär’ es auch zum letzten Gang! Burschen heraus!
+
+gsw
+
+
+# Gilberte de Courgenay
+
+By Prunterut im Jura, da hät e Wirt es Huus, da luegt es Meitschi alli Stund
+dreimaal zum Feischter us. Und fragsch du denn d’Soldate, wer ächt das
+Meitschi sei, so lüpft es jedem Schwyzerbueb sys Herz und au sys Bei.
+fr: C’est la petite Gilberte, Gilbert’ de Courgenay; elle connaît trois cent mill’
+soldats et tous les officiers. C’est la petite Gilberte, Gilbert’ de Courgenay; on
+la connaît dans toute la Suisse et toute l’armée. :
+
+Syg eine-n en Trompeter, syg eine-n en Tambour, sig eine simple Solidat, si
+het si a der Schnur, vom Korporal zum Lütenant, bis ufe zum Major, wer het
+die alli mitenand bim Zipfel und bim Ohr? frC’est usw.
+
+Und frogsch: Was Tüfels het sie denn, isch die denn gar so schön? Ah was,
+ich han scho i der Schwyz mängs Tusig Schöneri g’see. S’weiss keine rächt,
+wora das lyt am Aug oder am Schueh, doch das isch wurscht, me wird
+verruckt und rüeft enander zue: frC’est usw.
+
+Und gäbt me mir es Regiment, ich säiti: O herrje, o wär i doch nur Lütenant,
+und nur in Courgenay! Was nütze mir all Offizier und über tusig Maa, ich
+muess bim Herrgott Sapperment ganz öppis anders ha! frC’est usw.
+
+Und wenn der Chrieg denn dure isch und alles heizue goht, und denn der
+Wirtin ihres Huus leer a der Strasse’ denn stoht; wer wüscht am Fänschter
+d’Äugli uus und lueget i d’Ajoie und trured um die dreimalhunderttusig
+Maa? fr: C’est la petite Gilberte, Gilbert’ de Courgenay; elle cherche ses trois
+cent mill’ soldats et tous les officiers. C’est la petite Gilberte, Gilbert’ de
+Courgenay; elle pleure maintenant pour tout’ la Suisse et tout’ l’armée. :
+
+
+# Kneipgelage
+
+frÇa ça geschmauset, lasst uns nicht rappelköpfisch sein! Wer nicht
+mithauset, der bleib daheim! la: Edite, bibite, collegiales! post multa saecula
+pocula nulla! :
+
+Der Herr Professor liest heute kein Kollegium: drum ist es besser, man trinkt
+eins’ rum. laEdite usw.
+
+Trinkt nach Gefallen, bis ihr die Finger danach leckt; dann hat’s uns allen
+recht wohl geschmeckt. laEdite usw.
+
+Auf, auf, ihr Brüder! erhebt den Bacchus auf den Thron und setzt euch
+nieder, wir trinken schon. laEdite usw.
+
+So lebt man immer, solang der junge Lenz uns blinkt und Jugendschimmer
+die Wangen schminkt. laEdite usw.
+
+So lebt man lustig, weil es noch flotter Bursche heisst, bis dass man rüstig ad
+patres reist. laEdite usw.
+
+Bis dass mein Hieber vom corpus iuris wird besiegt, so lang, ihr Brüder, leb’
+ich vergnügt! laEdite usw.
+
+Denkt oft, ihr Brüder, an unsre Jugendfröhlichkeit, sie kehrt nicht wieder, die
+gold’ne Zeit! laEdite usw.
+
+
+# Crambambuli
+
+Crambambuli, das ist der Titel des Tranks, der sich bei uns bewährt; er ist ein
+ganz probates Mittel, wenn uns was Böses widerfährt. Des Abends spät, des
+Morgens früh trink’ ich mein Glas Crambambuli, Crambimbambambuli,
+Crambambuli!
+
+Bin ich im Wirtshaus abgestiegen gleich einem grossen Cavalier, dann lass’
+ich Brot und Braten liegen und greife nach dem Pfropfenzieh’r; dann bläst
+der Schwager tantari zu einem Glas Crambambuli, ...
+
+Reisst mich’s im Kopf, reisst mich’s im Magen, hab’ ich zum Essen keine
+Lust, wenn mich die bösen Schnupfen plagen, hab’ ich Katarrh auf meiner
+Brust: was kümmern mich die Medici? Ich trink’ mein Glas Crambambuli, ...
+
+Wär’ ich zum grossen Herrn geboren, wie Kaiser Maximilian, wär’ mir ein
+Orden auserkoren, ich hängte die Devise dran: fr«Toujours fidele et sans
+souci, c’est l’ordre du Crambambuli, ...»
+
+Ist mir mein Wechsel ausgeblieben, hat mich das Spiel labet gemacht, hat mir
+mein Mädchen nicht geschrieben, ein’n Trauerbrief die Post gebracht; dann
+trink’ ich aus Melancholie ein volles Glas Crambambuli, ...
+
+Ach, wenn die lieben Eltern wüssten der Herren Söhne grosse Not, wie sie so
+flott verkeilen müssten, sie weinten sich die Äuglein rot! Indessen tun die
+filii sich bene beim Crambambuli, ...
+
+Und hat der Bursch kein Geld im Beutel, so pumpt er die Philister an und
+denkt: Es ist doch alles eitel, vom Burschen bis zum Bettelmann; denn das ist
+die Philosophie im Geiste des Crambambuli, ...
+
+Soll ich für Ehr und Freiheit fechten, für Burschenwohl den Schläger
+ziehn’n, gleich blinkt der Stahl in meiner Rechten, ein Freund wird mir zur
+Seite stehn. Dann trinkt man nach gehabter Müh’ ein volles Glas
+Crambambuli, ...!
+
+Ihr dauert mich, ihr armen Toren, ihr liebet nicht, ihr trinkt nicht Wein; zu
+Eseln seid ihr auserkoren, und dorten wollt ihr Engel sein; sauft Wasser wie
+das liebe Vieh und meint, es sei Crambambuli, ...!
+
+Crambambuli soll mir noch munden, wenn jede andre Freude starb, wenn
+mich Freund Hein beim Glas gefunden und mir die Seligkeit verdarb: ich
+trink’ mit ihm in Companie das letzte Glas Crambambuli, ...
+
+Wer wider uns Crambambulisten sein hämisch Maul zur Missgunst rümpft,
+den halten wir für keinen Christen, weil er auf Gottes Gabe schimpft; ich
+gäb’ ihm, ob er Zeter schrie, nicht einen Schluck Crambambuli, ...!
+
+
+# Segen im Trinken
+
+: Das Essen, nicht das Trinken bracht’ uns ums Paradies. : Was Adam einst
+verloren durch seinen argen Biss, : das gibt der Wein uns wieder, der Wein
+und frohe Lieder. :
+
+Und als die Welt aufs Neue in Baucheslust versank, und in der Sünde Fluten
+die Kreatur ertrank, blieb Noah doch am Leben, der Pflanzer edler Reben.
+
+Er floh mit Weib und Kinder wohl in sein grösstes Fass, das schwamm hoch
+auf den Fluten, und keiner wurde nass. So hat der Wein die Frommen dem
+Wassertod entnommen.
+
+Und als die Flut zerronnen, da blieb das runde Haus auf einem Berge sitzen,
+und alle stiegen aus, begrüssten froh das Leben und pflanzten neue Reben.
+
+Das Fass blieb auf dem Berge zum Angedenken stehn, zu Heidelberg am
+Neckar könnt ihr es selber sehn. Nun wisst ihr, wer die Reben am Rhein hat
+uns gegeben.
+
+Und will noch einer wagen, den heil’gen Wein zu schmähn, der soll in
+Wasserfluten erbärmlich untergehn. Stosst an und singt, ihr Brüder: Hoch
+Wein und frohe Lieder!
+
+
+# Studenten-Liebchen
+
+Das Mädel aus dem ersten Stock im Haus mir grade gegenüber, das hatt’ ich
+längst schon heimlich gern und Tag für Tag noch lieber. Sie sah so oft
+verstohlen hin und lauschte hinterm Flieder, bis endlich winkte ihre Hand,
+dass sie des Liedes Sinn verstand: Schwarze Maid in deinem stillen
+Stübchen, komm zu mir und werde mein Feinsliebchen, : komm zu mir und
+sei mir lieb und treu, denn das Semester ist so schnell vorbei. :
+
+Die Holde brannte endlich durch, ich brachte sie auf meine Bude, das zweite
+Mal kam sie von selbst, jetzt ist sie meine Trude. Vorm Fenster steht der
+Fliederbaum, die Laute hängt am Nagel, wir sitzen auf dem Kanapei und
+küssen nach der Melodei: Schwarze Maid in deinem stillen Stübchen, bleib
+bei mir und küsse mich, Feinsliebchen, bleib bei mir und herze mich aufs
+neu’, denn das Semester ist so schnell vorbei.
+
+Der weisse Flieder ist verblüht, Semesterklang hat ausgeklungen, da hab’ ich
+meiner schwarzen Maid mein Lebewohl gesungen. Sie weinte nicht, sie hielt
+mich nicht, sie sah nur in die Ferne und winkte lächelnd gute Reise, ich
+summt’ dabei die alte Weise: Schwarze Maid in deinem stillen Stübchen, lebe
+wohl und bleibe mein Feinsliebchen, lebe wohl, du Land der Poesei, ach, das
+Semester war so schnell vorbei.
+
+
+# Das schwarzbraune Bier
+
+Das schwarzbraune Bier, das trink’ ich so gern und schwarzbraune Mädel, die
+küss’ ich so gern; : ei du, ei du, ei du charmantes Dudeldudeldei,
+juvivallerallera, juvivallerallera, du lässt mir keine Ruh. :
+
+Mein Schatz hat zwei Äugelein, die glänzen wie zwei Sternelein; ei du usw.
+
+Mein Schatz hat ein rosiges Kinn und in der Mitt’ ein Grüblein drin; ei du
+usw.
+
+Mein Schatz hat einen rosigen Mund, und wer den küsst, der wird gesund; ei
+du usw.
+
+
+# Der Graf von Rüdesheim
+
+Das war der Graf von Rüdesheim, mit Gütern reich beglückt, der hat des
+Winzers holder Maid zu tief ins Aug’ geblickt. Doch als er ihr die Lieb’
+gestand, lacht sie ihm ins Gesicht; der Graf ritt tief gekränkt nach Haus und
+mied des Tages Licht. : Und er sass und vergass in seiner Burg am Rhein
+seinen Schmerz, denn das Herz tröstet Rüdesheimer Wein. :
+
+Wohl sieben Jahre sass er so geschieden von der Welt und gab für
+Rüdesheimer Wein hin all sein Gut und Geld; wohl vierzig Güter gab er hin
+für edles Rebenblut, und als das letzte Jahr verging, ging auch das letzte Gut.
+Also sass und vergass er in der Burg am Rhein seinen usw.
+
+Doch als das letzte Gut vertan, ging es dem Grafen schlecht; ein andrer Herr
+bezog das Schloss, da ward der Graf ein Knecht. Die ganze Woche plagt er
+sich im Wirtshaus vor der Burg; was in der Woche er verdient, bracht er am
+Sonntag durch. Und dann sass und vergass er im Kellerloch am Rhein seinen
+usw.
+
+Und die euch dieses Lied erdacht, die waren selber dort; zu Fuss kam man
+den Berg herab, die Gelder waren fort. Man haderte mit dem Geschick und
+härmte sich gar sehr; da hörte man vom edlen Graf die wundersame Mär.
+Und man sass und vergass vor seiner Burg am Rhein seinen usw.
+
+
+# Das wilde Heer
+
+Das war der Herr von Rodenstein, der sprach: «Dass Gott mir helf’, gibt’s
+nirgend mehr ’nen Tropfen Wein des Nachts um halber zwölf? Raus da! Raus
+da aus dem Haus da! Herr Wirt, dass Gott mir helf’, gibt’ s nirgend mehr ’nen
+Tropfen Wein : des Nachts um halber zwölf?» :
+
+Er ritt landauf, landab im Trab, kein Wirt liess ihn ins Haus; todkrank noch
+seufzt vom Gaul herab er in die Nacht hinaus: «Raus da!» usw.
+
+Und als mit Spiess und Jägersrock sie ihn zu Grab getan, hub selbst die alte
+Lumpenglock’ betrübt zu läuten an: «Raus da!» usw.
+
+Doch wem der letzte Schoppen fehlt, den duld’t kein Erdreich nicht, drum
+tobt er jetzt, vom Durst gequält, als Geist umher und spricht: «Raus da!» usw.
+
+Und alles, was im Odenwald sein’ Durst noch nicht gestillt, das folgt ihm
+bald, es schallt und knallt, das klafft und brüllt: «Raus da!» usw.
+
+Das Lied singt man, wenn’s auch verdriesst, gestrengem Wirt zu Lehr; wer zu
+genau die Herberg schliesst, den straft das wilde Heer: «Raus da! Raus da aus
+dem Haus da! Rumdiridi Freijagd! Hoidirido Freinacht! Hausknecht hervor!
+öffne das Tor! : Raus, raus, raus! :
+
+
+# Das war der Zwerg Perkeo
+
+Das war der Zwerg Perkeo im Heidelberger Schloss, an Wuchse klein und
+winzig, an Durste riesengross. Man schalt ihn einen Narren, er dachte:
+«Liebe Leut’, : wär’t ihr wie ich doch alle feuchtfröhlich und gescheut.» :
+
+Und als das Fass, das grosse, mit Wein bestellet war, da ward sein künft’ ger
+Standpunkt dem Zwergen völlig klar. «Fahr wohl», sprach er, «o Welt, du
+Katzenjammertal, was sie auf dir hantieren, ist wurst mir und egal.»
+
+Um lederne Ideen rauft man manch heissen Kampf, es ist im Grund doch
+alles nur Nebel, Rauch und Dampf! Die Wahrheit liegt im Weine. Beim
+Weinschlurf sonder End, erklär ich alter Narre fortan mich permanent.»
+
+Perkeo stieg zum Keller; er kam nicht mehr herfür und sog bei fünfzehn
+Jahre am rheinischen Malvasier. War’s drunten auch stichdunkel, ihm strahlte
+inneres Licht, und wankten auch die Beine, er trank und murrte nicht.
+
+Als er zum Fass gestiegen, stand’s wohlgefüllt und schwer, doch als er kam
+zu sterben, klang’s ausgesaugt und leer. Da sprach er fromm: «Nun preiset,
+ihr Leute, des Herren Macht, die in mir schwachem Knirpse so Starkes hat
+vollbracht.»
+
+«Wie es dem kleinen David gegen Goliath einst gelang, also ich arm
+Gezwerge den Riesen Durst bezwang. Nun singt ein de profundis, dass das
+Gewölb erdröhnt, das Fass steht auf der Neige, ich falle sieggekrönt.»
+
+Perkeo ward begraben. − Um seine Kellergruft beim leeren Riesenfasse weht
+heut noch feuchte Luft. Und wer als frommer Pilger frühmorgens ihr genaht:
+Weh ihm! Als Weinvertilger durchtobt er nachts die Stadt!
+
+
+# Papst und Sultan
+
+Der Papst lebt herrlich in der Welt, er lebt von seinem Ablassgeld, : er trinkt
+vom allerbesten Wein; drum möcht’ ich auch der Papst wohl sein. :
+
+Doch nein, er ist ein armer Wicht, ein holdes Mädchen küsst ihn nicht, er
+schläft in seinem Bett allein; ich möchte doch der Papst nicht sein.
+
+Der Sultan lebt in Saus und Braus, er wohnt in einem grossen Haus voll
+wunderschöner Mägdelein; drum möcht’ ich wohl der Sultan sein.
+
+Doch nein, er ist ein armer Mann, denn folgt er seinem Alkoran, so trinkt er
+keinen Tropfen Wein; ich möchte doch nicht Sultan sein.
+
+Getrennt veracht’ ich beider Glück und kehr in meinen Stand zurück, doch
+das geh’ ich mit Freuden ein: Bald Papst, bald Sultan möcht’ ich sein.
+
+Drum Mädchen, gib mir einen Kuss, denn jetzt bin ich der Sultanus. Ihr
+trauten Brüder, schenket ein, damit ich auch der Papst kann sein.
+
+
+# Fahrender Schüler
+
+Der Sang ist verschollen, der Wein ist verraucht, stumm irr’ ich und träumend
+umher. : Es taumeln die Häuser, vom Sturme umhaucht, es taumeln die
+Wellen ins Meer. :
+
+Die Wolken, sie tanzen, manch Sternlein fällt, hat tief in den Wolken gezecht;
+ich steh’ wie ein Fels, wie die Angel der Welt, wie ein Kaiser in Freiheit und
+Recht.
+
+Und die Strassen durch irr’ ich, die Plätze so schnell, ich klopfe von Hause zu
+Haus; bin ein fahrender Schüler, ein wüster Gesell, wer schützt mich vor
+Wetter und Graus?
+
+Ein Mägdlein winkt mir vom hohen Altan, hell flackert im Winde ihr Haar.
+Ich schlag’ in die Saiten und schwing mich hinan, wie licht ist ihr Aug’ und
+wie klar!
+
+Und sie küsst mich und drückt mich und lacht so hell; nie hab ich die Dirne
+geschaut. Bin ein fahrender Schüler, ein wüster Gesell, was lacht sie und
+küsst mich so traut!
+
+
+# Der Binschgauer Wallfahrt
+
+: Die Binschgauer wollten wallfahrten gehn, :: sie täten gerne singen und
+kunnten’s nit gar schön. : Zschahi, zschaho, zschahiahiaho! Die Binschgauer
+sind schon wiederumme do! Jetzt schau fein, dass ein : jeder, :: jeder, :
+: jeder, :: sein Ränzele hol :
+
+Die Binschgauer zogen weit vom Heimatland; sie schauten viele Stadel und
+wurden rings bekannt. Zschahi usw.
+
+Die Binschgauer hatten lange Freud und Not, bis hoch des Domes Zinne
+erglänzt im Abendrot. Zschahi usw.
+
+Die Binschgauer gängen um den Dom herum, die Fahnestang ist broche, jetzt
+gängen’s mit dem Trumm. Zschahi usw.
+
+Die Binschgauer gängen in den Dom hinein, die Heil’gen täten schlafen, sie
+kunnten’s nit anschrei’n. Zschahi usw.
+
+O heiliger Sankt Florian! Verschone unsre Häuser, zünd lieber andre an!
+Zschahi usw.
+
+
+# Die Gedanken sind frei
+
+Die Gedanken sind frei! Wer kann sie erraten? Sie fliehen vorbei wie
+nächtliche Schatten. Kein Mensch kann sie wissen, kein Jäger erschiessen
+mit Pulver und Blei: Die Gedanken sind frei!
+
+Ich denke, was ich will und was mich beglücket, doch alles in der Still’ und
+wie es sich schicket. Mein Wunsch und Begehren kann niemand verwehren,
+es bleibet dabei: Die Gedanken sind frei!
+
+Und sperrt man mich ein im finsteren Kerker, das alles sind rein vergebliche
+Werke. Denn meine Gedanken zerreissen die Schranken und Mauern
+entzwei: Die Gedanken sind frei!
+
+Drum will ich auf immer den Sorgen entsagen und will mich auch nimmer
+mit Grillen mehr plagen. Man kann ja im Herzen stets lachen und scherzen
+und denken dabei: Die Gedanken sind frei!
+
+Ich liebe den Wein, mein Mädchen vor allen, sie tut mir allein am besten
+gefallen. Bei einem Glas Weine bin ich nicht alleine, mein Mädchen dabei:
+Die Gedanken sind frei!
+
+
+# Dort Saaleck, hier die Rudelsburg
+
+Dort Saaleck, hier die Rudelsburg, und unten tief im Tale da rauschet
+zwischen Felsen durch die alte liebe Saale, und Berge hier und Berge dort zur
+Rechten und zur Linken − : die Rudelsburg, das ist ein Ort zum Schwärmen
+und zum Trinken. :
+
+Das wissen die Studenten auch in Jena und in Halle und trinken dort nach
+altem Brauch im Hof und auf dem Walle. Umringt von moosigem Gestein,
+wie klingen da die Lieder! Die Saale rauscht so freudig drein, die Berge
+hallen wider.
+
+O Vaterland, wie bist du schön mit deinen Saatenfeldern, mit deinen Tälern,
+deinen Höhn und all den stolzen Wäldern! O Vaterland, drum wollen wir dir
+unsre Lieder singen, zu deinem Preise sollen hier laut Herz und Becher
+klingen.
+
+Wie tönet das ins Tal hinein vom Felsen hoch hernieder, – die Saale rauscht
+so freudig drein, die Berge hallen wider; und Berge hier und Berge dort zur
+Rechten und zur Linken – die Rudelsburg, das ist ein Ort zum Schwärmen
+und zum Trinken.
+
+gsw
+
+
+# Fuxenlied
+
+Dr Früehlig isch eben in d’Lande cho, im Bluescht stoht juscht dr Wy, wer
+wott nit us sich use go, wie jede Fux am Rhy? Lueg Mueter, schick di dri, de
+muesch mi au verstoh; i wott doch au kei andre si, i schloh im Vatter noh.
+
+So lang dr Rhy no nidsi goht, hänn d’Buebe d’Maitli gern, so lang is s’ Herz
+im Lyb no schloht, het jede Fux e Stärn.
+
+Und wott im ein uf d’Seel cho stoh, potz Blitz! Do hau i dri, Harrus! wie will
+i Quarte schloh, do sin mir Füx drbi.
+
+Und d’Ehr soll unsre Wahlspruch sy und Alemannetreu; und Heimet, du
+muesch frei uns sy, das schwöre mir uf’s neu.
+
+
+# Lied eines heimziehenden Studenten
+
+Drei Bilder und eine Pfeife, ein Becher und ein Stab : ist alles von meinen
+Sachen, was ich gerettet hab’. :
+
+Die Bilder will ich behalten, es sind drei Freunde lieb, von denen ein jeder in
+Freude und Leid mir treu verblieb.
+
+Die Pfeife will ich zerschlagen am ersten grossen Stein, das Lied vom alten
+Burschen muss ausgepfiffen sein.
+
+Noch einmal füll’ ich den Becher am ersten klaren Quell, dann musst du
+scheiden und sterben, du alter treuer Gesell.
+
+Der Stab hat mich geführet, geschützet so mannichmal, er soll mich auch
+begleiten durch Berg und Wald und Tal.
+
+Jetzt kommt, ihr Bilder, du Pfeife, du Becher und du Stab − ihr werdet nicht
+erzählen, dass ich geweinet hab’.
+
+
+# Drei Klänge
+
+Drei Klänge sind’s, sie tönen hold und rein voll Harmonie durch unser
+Burschenleben, drei Klänge sind’s, die uns wie goldner Wein zu frohem
+Schlag das freie Herz erheben; sie will ich preisen noch mit grauem Haar, bis
+mich der Tod ins Dunkel zieht hernieder: : Der Schläger Klang, der Gläser
+Klang, den Klang der Lieder, sie will ich preisen nun und immerdar! :
+
+Des Schlägers Klang, er tönt so scharf und kühn, für Burschenehre blitzet
+seine Klinge; beim Gläserklang so froh die Herzen glühn, trägt sie empor des
+Weines Geisterschwinge. Der Lieder Klang hebt sich zum Himmel auf, im
+Kreis des Edlen, Guten, Hohen, Schönen, : der Freiheit Lied, der Liebe Lied
+es soll ertönen mit goldnem Schall durch unsern Lebenslauf. :
+
+Drei Klänge sind’s von ganz besondrer Art, sie dünken uns die herrlichsten
+von allen, darum, ihr Brüder, lasset froh geschart das Jubellied zu ihrem
+Ruhm erschallen. Aus, nehmt das Glas mit goldnem Wein zur Hand und ruft
+es laut nach alter Burschenweise: : Das Schwert zum Schluss, das Glas aufs
+Wohl, das Lied zum Preise für unser schönes, freies Vaterland! :
+
+
+# Es zog ein Bursch hinaus
+
+Ein Burschenherz in Lieb’ und Lust, an Liedern reich und Sangeslust, wie
+schlägt’s so heiss mit unterm Flaus; : Singsang und Klingklang, es zog ein
+Bursch hinaus! :
+
+Und wo ein Herz in Liebe heiss, der Bursch es bald zu finden weiss, sein
+Herz ist weit, ein weites Haus; Singsang usw.
+
+Lebt wohl, ihr Strassen grad und krumm, ich zieh’ nicht mehr in euch herum,
+nicht tönt mein Lied in Saus und Braus; Singsang usw.
+
+Weint’ manche Trän’ die junge Maid dem jungen Blut in Lust und Leid, er
+bleibt doch nicht im Vaterhaus. Singsang usw.
+
+Feinsliebchen, scheide ich von dir, dies letzte Liedlein schenk ich dir: Leb
+wohl und denk im stillen Haus: Singsang usw.
+
+Und kommt der letzte Augenblick, ich hab’ geliebt, das war mein Glück,
+doch nun ist’s aus mit Saus und Braus; Singsang usw.
+
+Der letzte Kuss, der letzte Schmiss, die brannten beide bittersüss; im letzten
+Gang die Klinge sprang. Singsang usw.
+
+
+# Leichter Wanderer
+
+Ein Heller und ein Batzen, die waren beide mein, der Heller ward zu Wasser,
+der Batzen ward zu Wein! Juchheidi! fallera falleri falleriaho! der Heller
+ward zu Wasser, der Batzen ward zu Wein!
+
+Die Mädel und die Wirtsleut’, die rufen beid’: O weh! Die Wirtsleut’, wenn
+ich komme, die Mädel, wenn ich geh’. Juchheidi usw.
+
+Mein’ Stiefel sind zerrissen, mein’ Schuh, die sind entzwei, und draussen auf
+der Heiden, da singt der Vogel frei. Juchheidi usw.
+
+Und gäb’s kein’ Landstrass’ nirgend, da säss’ ich still zu Haus, und gäb’s kein
+Loch im Fasse, da tränk’ ich gar nicht draus. Juchheidi usw.
+
+Das war ’ne rechte Freude, als mich der Herrgott schuf, ein Kerl wie Samt
+und Seide, nur schade, dass er suff. Juchheidi usw.
+
+
+# Schusterliedchen
+
+Ein Schuster liebte einst ein schönes Mädchen, und er versah sie stets mit
+neuen Schuh’n. Sie hatt’ so hübsche Füss’ und runde Wädchen, und sie tat,
+was alle Mädchen tun: Sie nahm die Schuh, und liess den Schuster sitzen –
+der Schuster sass auf dem Popo, : liess die Schusterahle blitzen, denn
+schustern musst’ er sowieso. :
+
+Das schöne Mädchen liebte einen andern, und dieser andre war ein reicher
+Mann. Man sah sie oft zur Abendstunde wandern, weil man da viel besser
+wandern kann. Der arme Schuster klopfte seine Sohlen von morgens früh bis
+spät zur Nacht, : sass als wie auf glüh’nden Kohlen, denn ach, er war so sehr
+verkracht. :
+
+Da kam sie eines Tags auf seine Bude, sie war so kugelrund und weinte sehr.
+Das war nicht mehr die schlanke, stolze Trude, und sie war auch keine
+Jungfrau mehr. Ach, lieber Schuster, kannst du mir verzeihen? Verschollen ist
+der reiche Mann! Und der Schuster tat sie freien, wie man im Amtsblatt lesen
+kann.
+
+Und die Moral von diesem schönen Märchen: Ein Schuster hat im Leben
+nicht nur Pech! Oft geht es nicht einmal ein ganzes Jährchen, denn die
+schönen Mädchen sind zu frech. Dann kommt der Schuster wiederum zu
+Gnaden, und sitzt er auch nur auf dem Po – hübsche Füss’ und runde Waden
+sind über’n Schuster wieder froh.
+
+
+# Im Zimmer neben mir
+
+Eine kleine süsse Maid, süss zum Fressen schier, : wohnet schon seit ein’ger
+Zeit im Zimmer neben mir. :
+
+Morgens steht sie früh schon auf, bringt dem Durst’gen Bier, Kelln’rin ist die
+schöne Maid im Zimmer neben mir.
+
+Komm’ ich von der Kneipe heim, morgens um halb vier, steh’n zwei
+Schühlein reizend klein vorm Zimmer neben mir.
+
+Einmal kam ich spät nach haus, ich verirrt die Tür und geriet versehentlich
+ins Zimmer neben mir.
+
+Was geschah, verrat’ ich nicht, weil ich mich genier. Seither schlaf’ ich jede
+Nacht im Zimmer neben mir.
+
+
+# Leibarzt und Zecher
+
+Einst hat mir mein Leibarzt geboten: Stirb, oder entsage dem Wein! Dem
+weissen sowohl als dem roten, : sonst wird es dein Untergang sein! :
+
+Ich hab’ es ihm heilig versprochen, auf etliche Jahre zwar nur; doch schon
+nach zwei schrecklichen Wochen, vergass ich den albernen Schwur.
+
+Wie trefflich bekam mir die Speise, wie schlief ich so ruhig die Nacht! Wie
+war ich so munter, so weise, so fröhlich zum Sterben gemacht!
+
+Tod, höre! Man hat mir befohlen: Stirb oder entsage dem Wein! Sieh, wann
+du willst, kannst du mich holen; hier sitz ich und schenke mir ein!
+
+
+# Weinmärchen
+
+Einst pocht’ ich an ein einsam’ Haus in weltvergess’nem Tale; der greise
+Siedler trat heraus mit weingefüllter Schale. «Da nimm und trinke!» sprach
+er mild, «es ist vom irdischen Gefild, das beste Blut der Reben, : so dir ein
+Mensch kann geben.» :
+
+Ich trank sie leer, ich hielt sie hin: «Noch eine, nur noch eine! Dann sag dem
+Fremdling, der ich bin, wie kamst du zu dem Weine?» Der Alte schüttelte den
+Bart: «Such ihn dir selbst auf deiner Fahrt, wirst noch um diesen Tropfen an
+manche Türe klopfen.»
+
+Nun hab’ ich nimmer Ruh noch Rast, des Weines muss ich denken, war
+seinetwegen schon zu Gast in ungezählten Schenken. Ich such’ ihn auf dem
+Erdenrund, am Rhein, im Welschland und Burgund, such’ ihn bei Nacht, bei
+Tage, bei jedem Glockenschlage.
+
+Drum kann ich nicht vorübergeh’n, wo Herbergsschilder rosten, kann
+nirgend’ Wein verzapfen seh’n, muss jeden einmal kosten. Den einen such’
+ich immer nur, und eh’ ich ihm nicht auf der Spur, muss wandern ich und
+trinken, bis mir die Äuglein sinken.
+
+
+# Klärchen
+
+Er stand beim Train und war Sergeante, und sie, sie war Probiermamsell. Sie
+aber hatte eine Tante, die führt’ in Hamburg ein Bordell. : Die war so schlau
+und rechnet drum die Liebe gleich in Taler um! :
+
+Weil der Sergeant denn so alleine, so tät’ er sich ein Liebchen frei’n. Er
+küsste sie im Mondenscheine, und sie, sie sagte auch nicht: «Nein!» : Die
+Liebe war ganz fürchterlich, doch Gelder hatten beide nicht. :
+
+Und so zog Klärchen, denn so hiess sie, nach Hamburg zu der Tante hin. Und
+der Sergeant, ach Gott, er liess sie mit heissem Kuss von hinnen
+zieh’n. : «Ich bleib’ Dir treu!» sprach sie und schluch ’nen Knoten in ihr
+Taschentuch. :
+
+In Hamburg nahm die liebe Tante erfreut schön Klärchen in Empfang. «Sei
+mir gegrüsst, lieb’ Anverwandte, mach Dir’s bequem und bleib’ recht
+lang! : Hier siehst Du, was dem Menschen frommt, und wie man leicht zu
+Gelde kommt!» :
+
+Zuerst war Klärchen sehr dagegen, denn sie vermisste die Moral. Da war die
+Tante sehr verlegen, ein Fräulein musste ins Spital. : Da macht’ sich Klärchen
+nichts daraus und half ein ganz klein wenig aus. :
+
+Der Kundschaft kam das sehr gelegen, denn sie fand Klärchen sehr charmant.
+Doch sie, sie tat’s des Geldes wegen! Im Herzen liebt’ sie den
+Sergeant. : Und kaum hat sie das nöt’ge Geld, hat den Betrieb sie
+eingestellt. :
+
+Sechs Wochen drauf am Traualtare schön Klärchen stand mit dem Sergeant,
+den Myrtenkranz trug sie im Haare, der ihrem Blond vortrefflich stand. : Und
+so trat Klärchen keusch und rein als Jungfrau in die Ehe ein. :
+
+Und die Moral von der Geschichte, wie Klärchen sie am Morgen fand, und
+wie getreulich ich berichte, und wie sie ihrem Mann gestand: : «Viel schöner
+ist die Hochzeitsnacht, wenn ’s Lieben keine Schmerzen macht!» :
+
+
+# Ins Heu
+
+Es hatte ein Bauer ein schönes Weib, die blieb so gerne zu Haus; sie bat oft
+ihren lieben Mann, er sollte doch fahren hinaus, er sollte doch fahren ins
+Heu, er sollte doch fahren ins ha ha ha ha ha ha Heu, juchhei, juchhei,
+juchhei! er sollte doch fahren ins Heu.
+
+Der Mann, der dachte in seinem Sinn: Die Reden, die sind gut! Ich will mich
+hinter die Haustür stell’n, will seh’n was meine Frau tut. Will sagen, ich fahre
+ins Heu usw.
+
+Da kommt geschlichen ein Reitersknecht zum jungen Weibe hinein, und sie
+umfanget gar freundlich ihn, gab stracks ihren Willen darein. «Mein Mann ist
+gefahren ins Heu» usw.
+
+Er fasste sie um ihr Gürtelband und schwang sie wohl hin und her; der Mann,
+der hinter der Haustür stand, ganz zornig da trat herfür: «Ich bin nicht
+gefahren ins Heu» usw.
+
+«Ach trauter, herzallerliebster Mann, vergib mir diesen Fehl! Will lieben
+fürbass und herzen dich, will kochen süss Mus und Mehl. Ich dachte, du
+wärest ins Heu» usw.
+
+«Und wenn ich gleich gefahren wär’ ins Heu und Haberstroh, so sollst du nun
+und nimmermehr einen andern lieben also; der Teufel mag fahren ins Heu!»
+usw.
+
+
+# Fiducit
+
+Es hatten drei Gesellen ein fein Collegium; : es kreiste so fröhlich der Becher
+in dem kleinen Kreise herum. :
+
+Sie lachten dazu und sangen und waren froh und frei, des Weltlaufs Elend
+und Sorgen, sie gingen an ihnen vorbei.
+
+Da starb von den dreien der eine, der andere folgte ihm nach, und es blieb der
+dritte alleine in dem öden Jubelgemach.
+
+Und wenn die Stunde gekommen des Zechens und der Lust, dann tät er die
+Becher füllen und sang aus voller Brust.
+
+So sass er einst auch beim Mahle und sang zum Saitenspiel, und zu dem
+Wein im Pokale eine helle Träne fiel.
+
+«Ich trink’ euch ein Schmollis, ihr Brüder! Wie sitzt ihr so stumm und so
+still? Was soll aus der Welt denn noch werden, wenn keiner mehr trinken
+will?»
+
+Da klangen der Gläser dreie und wurden mählich leer: «Fiducit, fröhlicher
+Bruder!» Der trank keinen Tropfen mehr.
+
+
+# Der Hammerschmied
+
+Es ist ja kein Dörflein so kleine, ein Hammerschmied wohnet dareine. Zieh,
+Bruder, zieh! Und lass es lustig laufen! So ist’s recht, so ist’s recht! Du sollst
+dich nur besaufen! Auf mit dem Hammer, nieder mit ihm, : schmiede das
+Eisen so lang es noch warm ist, warm ist, schmiede das Eisen so lang es noch
+glüht! :
+
+
+# Das Herz am Rhein
+
+Es liegt eine Krone im grünen Rhein, gezaubert von Gold und von Edelstein,
+und wer sie erhebt vom tiefen Grund, den krönt man zu Aachen in selbiger
+Stund; vom Belt bis zur Donau die Lande sind sein, : dem Kaiser der
+Zukunft, dem Fürsten am Rhein. :
+
+Es liegt eine Leier im grünen Rhein, gezaubert von Gold und von Elfenbein,
+und wer sie erhebt aus tiefem Grund, dem strömen die Lieder begeisternd
+vom Mund. Der Kranz der Unsterblichkeit wartet sein, des Sängers der
+Zukunft, des Sängers am Rhein.
+
+Ich weiss, wo ein Häuschen am grünen Rhein, umranket von Reblaub die
+Fensterlein, drin waltet ein Herz so engelgleich, so arm zwar an Gold, doch
+an Unschuld so reich. Gehörte dies Herz an dem Rheine mir, ich gäbe die
+Krone, die Leier dafür!
+
+
+# Der Ichthyosaurus
+
+Es rauscht in den Schachtelhalmen, verdächtig leuchtet das Meer, da
+schwimmt mit Tränen im Auge ein Ichthyosaurus daher.
+
+Ihn jammert der Zeiten Verderbnis, denn ein sehr bedenklicher Ton war
+neuerlich eingerissen in der Liasformation.
+
+Der Plesiosaurus, der alte, er jubelt in Saus und Braus, der Pterodactylus
+selber flog neulich betrunken nach Haus.
+
+Der Iguanodon, der Lümmel, wird frecher zu jeglicher Frist; schon hat er am
+hellen Tage die Ichthyosaura geküsst.
+
+Mir ahnt eine Weltkatastrophe, so kann es ja länger nicht geh’n; was soll aus
+dem Lias noch werden, wenn solche Dinge gescheh’n?
+
+So klagte der Ichthyosaurus, da ward es ihm kreidig zu Mut; sein letzter
+Seufzer verhallte im Qualmen und Zischen der Flut.
+
+Es starb zu derselbigen Stunde die ganze Saurierei, sie kamen zu tief in die
+Kreide, da war es natürlich vorbei.
+
+Und der uns hat gesungen dies petrefaktische Lied, der fand’s als fossiles
+Albumblatt auf einem Koprolith.
+
+
+# Si tacuisses!
+
+Es sassen drei Halunken, lunken, an einem Biertisch trunken, trunken, : sie
+hielten weisen Rat und täten eine Wett’, wer unter ihnen wohl das schönste
+Mädchen hätt’. :
+
+Da war auch einer drunter, das Maul nicht halten kunnt’ er: «Mein Schatz, die
+Kunigund, hat mir heut zugelacht, ich dürfe bei ihr sein die liebe lange
+Nacht!»
+
+Das Mädchen stand im Gärtli und hörte jedes Wörtli; «Wart, wart, ich will dir
+schon die Lust vertreiben fein: Kommst du vor meine Tür, ich lass’ dich nicht
+herein!»
+
+Des Morgens um halb viere stand er vor ihrer Türe; er klopfte dreimal an mit
+seinem Siegelring: «Schläfst oder wachest du, herzallerliebstes Kind?»
+
+«Mag schlafen oder wachen, ich tu dir nicht aufmachen! Geh du nur immer
+hin, wo du gewesen hast und binde deinen Gaul an einen dürren Ast!»
+
+«Wohin soll ich nun reiten? Es schlafen alle Leuten! Es regnet und es schneit
+und geht ein kühler Wind; es schlafen alle Leut’ und alle Burgerskind!»
+
+«Das tut mich gar nicht rühren, dass dir das tut passieren! Denn wer ein
+Mädchen hat und sagt es jedermann, der klopft denn auch wie du gar oft
+vergebens an!»
+
+Da sprachen die Herrn Hausknechte: «Dem Kerl geschieht ganz rechte! Hätt’
+er geschwiegen still und’s Maul gehalten fein, so läg er heute nacht beim
+schönsten Mägdelein!»
+
+
+# Es war ein Knabe gezogen
+
+Es war ein Knabe gezogen wohl in die Welt hinaus, und ob ihm sein Schatz
+auch gewogen, das Glück, das Glück war aus. : Und er wanderte weit zur
+Sommerszeit, wenn am Walde die Rosen blüh’n. :
+
+(Wärst du so hoch nicht geboren und ich nicht ein armer Knab’, die Liebe,
+die Lieb’ ist verloren, die Welt ist leer wie ein Grab. Doch was soll mir mein
+Leid zur Sommerszeit, wenn am Walde die Rosen blüh’n.)
+
+Das Mägdelein barg seine Klagen im stillen Kämmerlein, sie durfte es
+niemandem sagen, sie hoffte jahraus und jahrein. Und sah über die Heid’ zur
+Sommerszeit, wenn am Walde die Rosen blüh’n.
+
+Es kam ein Reiter geflogen, die Locken, sie wehten im Wind: «Hei, bist du
+mir heut noch gewogen, herzallerliebstes Kind?» Und da lachten sie beid zur
+Sommerszeit, wenn am Walde die Rosen blüh’n.
+
+Er hielt sie in seinen Armen, das Herz ihm vor Wonne schlug, und hatte die
+Welt nicht Erbarmen, die Liebe, die Lieb’ war stark genug! Und da küssten
+sich beid’ zur Sommerszeit, wenn am Walde die Rosen blüh’n.
+
+
+# Der König in Thule
+
+Es war ein König in Thule gar treu bis an das Grab, dem sterbend seine
+Buhle einen goldenen Becher gab.
+
+Es ging ihm nichts darüber, er leert’ ihn jeden Schmaus, die Augen gingen
+ihm über, so oft er trank daraus.
+
+Und als er kam zum Sterben, zählt’ er seine Städt’ im Reich, gönnt’ alles
+seinen Erben, den Becher nicht zugleich.
+
+Er sass beim Königsmahle, die Ritter um ihn her, auf hohem Vätersaale, dort
+auf dem Schloss am Meer.
+
+Dort stand der alte Zecher, trank letzte Lebensglut und warf den heil’gen
+Becher hinunter in die Flut.
+
+Er sah ihn stürzen, trinken und sinken tief ins Meer. Die Augen täten ihm
+sinken, trank nie ein’ Tropfen mehr.
+
+
+# Der Harung
+
+Mit «Couleurstrophen»
+
+Es war einmal ein Harung, der grämte sich gar sehr, : dass man sein Weib
+gefangen, zu Amsterdam am Meer. :
+
+Es sassen zwei Studenten im Münchner Hofbräuhaus, zog jeder aus der
+Tasche einen Harung heraus.
+
+Sie schnitten sie in Stücke mit kunstgerechter Hand, und warfen ihre Seelen
+zusammen an die Wand.
+
+Sprach eine zu der andern: «Erkennst du mich nicht mehr? War einst dein
+treuer Buhle, zu Amsterdam am Meer.»
+
+Hieraus kann man ersehen die wundersame Mär: Es treffen sich die Seelen
+zu Lande und zu Meer.
+
+Und diese letzte Strophe, sie ist mein einz’ ger Spass: Es treffen sich
+Rhenanen im Kübel auf dem Fass.
+
+Und diese allerletzte Strophe, ich sing si hüt und morn: Es treffen sich
+Alemannen im Basler Löwenzorn.
+
+Und diese allerletzte Strophe, sie ist mein einz’ger Trost: Es treffen sich
+Utonen im Schänzli und im Ost.
+
+Und diese allerletzte Strophe, man hört sie nicht mehr viel: Es treffen sich
+Rhodanen zu Genf im Krokodil.
+
+Und diese allerletzte Strophe, man stimmt sie kaum mehr an: Es treffen sich
+Jurassen im Vaudois zu Lausanne.
+
+
+# Es wollt’ ein Mädel
+
+Es wollt’ ein Mädel wohl auf ein Schiff, ein Jungmatrose zu ihm spricht: : Ei
+wohin denn, du wunderschönes Mägdelein, sollst heute Nacht meine
+Beischläfrin sein; denn ich schlaf ja so alleine. :
+
+Beischläfrin sein, das kann ich nicht, wenn das nur meine Mutter wüsst; denn
+sie hat mich von zu Hause fortgeschickt, hat mir einen Taler in die Hand
+gedrückt für so ein’n Jungmatrosen.
+
+Er nahm das Mägdelein wohl bei der Hand, und führt’ sie hinunter an den
+Strand; und sie schliefen so fröhlich beisammen, bis dass der helle, helle Tag
+erwacht, und das Schifflein fuhr von dannen.
+
+Auf, auf Matrosen es ist jetzt Zeit, macht euch zur grossen Fahrt bereit! Und
+sie hoben die Anker in die Höhe, hissten die Segel bis ganz oben auf den
+Mast, und das Schifflein fuhr von dannen.
+
+Und als das Mädel vom Schlaf erwacht, da fing es bitterlich zu weinen an:
+Ei, wo hab ich die Ehre denn gelassen, bei einem jungen, jungen
+Schiffsmatros’, der mich schmählich hat verlassen.
+
+Und als das Mädel nach Hause kam, da fing die Mutter zu schelten an: Ei wo
+bist du Luder denn gewesen, habe dich die liebe lange Nacht gesucht, mit der
+Stalllaterne und dem Besen.
+
+
+# Es zogen auf sonnigen Wegen
+
+Es zogen auf sonnigen Wegen drei lachende Mädel durchs Land. Sie
+schwenkten die Röcke verwegen und sangen so allerhand, : die erste mit dem
+Schopf, die zweite mit dem Zopf, die dritte mit dem goldenen Lockenkopf. :
+
+Sie schwenkten verwegen die Beine und sangen ein Liedchen dabei. Ich
+wurd’ mir nicht schlüssig für eine, drum küsst’ ich sie alle drei, die erste usw.
+
+Jedoch eine jede wollt’ haben, dass ich ihr Alleiniger sei. Kein Drittel, den
+ganzen Knaben, den wollten sie alle drei, die erste usw.
+
+Du Schwarze, du Blonde, du Braune, vergib und vergiss und verzeih. Wollt’
+keiner verderben die Laune, drum küsst’ ich euch alle drei, die erste usw.
+
+Und sollte mich einer mal fragen, warum ich geküsst alle drei, so könnt’ ich
+ihm eines nur sagen: Es war keine vierte dabei; die erste usw.
+
+Erhebet das Glas, Kavaliere, und stosst allesamt mit mir an: Es lebe der Wein
+und die Liebe und alles was drum ist und dran, die erste usw.
+
+
+# Der Wirtin Töchterlein
+
+Es zogen drei Burschen wohl über den Rhein, : bei einer Frau Wirtin da
+kehrten sie ein: «Frau Wirtin, hat Sie gut Bier und Wein? Wo hat Sie ihr
+schönes Töchterlein?» :
+
+«Mein Bier und Wein ist frisch und klar, − mein Töchterlein liegt auf der
+Totenbahr’». Und als sie traten zur Kammer hinein, da lag sie in einem
+schwarzen Schrein.
+
+Der erste, der schlug den Schleier zurück und schaute sie an mit traurigem
+Blick: «Ach, lebtest du noch, du schöne Maid! Ich würde dich lieben von
+dieser Zeit!»
+
+Der zweite deckte den Schleier zu und kehrte sich ab und weinte dazu: «Ach,
+dass du liegst auf der Totenbahr’! Ich hab’ dich geliebet so manches Jahr!»
+
+Der dritte hub ihn wieder sogleich und küsste sie an den Mund so bleich:
+«Dich liebt’ ich immer, dich lieb’ ich noch heut und werde dich lieben in
+Ewigkeit.»
+
+
+# Fünf Banner flattern
+
+Fünf Banner flattern die Strasse entlang, in der Sonne blitzen Rapiere, und
+dröhnend hallet der Burschengesang, wir ziehen aus zum Turniere. Im Auge
+den Frohsinn, im Arme die Kraft, rückt aus Akademias Turnerschaft.
+
+Wir tragen im Herzen den goldenen Spruch: «Mens sana in corpore sano.» Es
+strahlet vom seidenen Bannertuch: «Mens sana in corpore sano.» Wer die
+Weisheit sucht, wer die Trägheit bezwingt, der ist’s, der im Leben den Kranz
+erringt.
+
+Wo Jugendfreude, wo Tatenlust im Herzen des Menschen hauset, wo
+Schweizerblut in der Burschenbrust wie der Wildbach des Hochlandes
+brauset, da reift vom Rhein bis zum Rhonestrand eine wack’re Schar dem
+Vaterland.
+
+Und blickt ins Auge der Freund dem Freund, wenn stolz unsre Farben
+erglänzen, und sind wir beim vollen Becher vereint, unter Rosen- und
+Eichenlaubkränzen, dann hallt’s in der Runde voll feuriger Kraft: Ein Hoch
+Akademias Turnerschaft!
+
+
+# Das Lied von der SAT
+
+Fünf Banner seh’ ich wehen im lieben Schweizerland! Studenten sie
+betreuen, den Schläger in der Hand. Bereit zu jedem Gange für Freiheit und
+für Ehr’, als gute Eidgenossen, der Heimat Schutz und Wehr. Rhenanen-,
+Alemannen- und jung Utonenblut, Rhodanen und Jurassen in Band und
+Farbenhut. Man kennt uns aller Orten, vom Berg bis an die See, : Wir sind
+die Turnerschaften, wir sind die SAT! :
+
+Beim Wettkampf auf dem Rasen, in Schnee und Sonnenschein, von guten
+Kameraden wird einer Sieger sein. Und singen hell die Schläger und heisst’s:
+«Auf die Mensur!» Fest steht der SATer, die Klinge zieht die Spur.
+Rhenanen-, Alemannen- und jung Utonenblut, Rhodanen und Jurassen in
+Band und Farbenhut. Man kennt uns aller Orten, vom Berg bis an die
+See, : wir werden’s immer wagen! Wir sind die SAT! :
+
+Wir heben hoch die Gläser, in trauter Freunde Kreis, die alten Lieder leben,
+die Herzen werden heiss. Doch lacht dem flotten Burschen ein süsser
+Mädchenmund; wer will es ihm verwehren? Er küsst sich dran gesund.
+Rhenanen-, Alemannen- und jung Utonenblut, Rhodanen und Jurassen in
+Band und Farbenhut. Man kennt uns aller Orten, vom Berg bis an den
+See, : die fröhlichen Gesellen von unsrer SAT! :
+
+Und winkt aus alten Zeiten uns die Erinnerung; zum Teufel die Semester,
+dann sind wir wieder jung! So stehen wir zusammen in Treue allezeit, die
+Jungen und die Alten, zu jeder Tat bereit. Rhenanen-, Alemannen- und jung
+Utonenblut, Rhodanen und Jurassen in Band und Farbenhut. Gradaus in allen
+Dingen, was immer auch gescheh’, : wir werden es schon zwingen, wir sind
+die SAT! :
+
+la
+
+
+# De brevitate vitae
+
+: Gaudeamus igitur, iuvenes dum sumus, : post iucundam iuventutem, post
+molestam senectutem : nos habebit humus! :
+
+Ubi sunt, qui ante nos in mundo fuere? Vadite ad superos, transite ad inferos,
+ubi iam fuere.
+
+Vita nostra brevis est, brevi finietur, venit mors velociter, rapit nos atrociter,
+nemini parcetur.
+
+Vivat academia, vivant professores, vivat membrum quodlibet, vivant
+membra quaelibet, semper sint in flore!
+
+Vivant omnes virgines, faciles, formosae, vivant et mulieres, tenerae,
+amabiles, bonae, laboriosae!
+
+Vivat et res publica et qui illam regit, vivat nostra civitas, maecenatum
+caritas, quae nos hic protegit!
+
+Pereat tristitia, pereant osores! Pereat diabolus quivis antiburschius, atque
+irrisores!
+
+
+# Grad aus dem Wirtshaus
+
+Grad aus dem Wirtshaus nun komm’ ich heraus, Strasse, wie wunderlich
+siehst du mir aus! Rechter Hand, linker Hand, beides vertauscht, Strasse, ich
+merke wohl, du bist berauscht!
+
+Was für ein schief Gesicht, Mond, machst denn du? Ein Auge hat er auf, eins
+hat er zu! Du wirst betrunken sein, das seh’ ich hell; schäme dich, schäme
+dich, alter Gesell!
+
+Und die Laternen erst, was muss ich seh’n! Die können alle nicht grade mehr
+steh’n, wackeln und fackeln die Kreuz und die Quer, scheinen betrunken mir
+allesamt schwer.
+
+Alles im Sturme rings, grosses und klein; wag ich darunter mich nüchtern
+allein? Das scheint bedenklich mir, ein Wagestück! Da geh ich lieber ins
+Wirtshaus zurück.
+
+
+# Heidelberg, du Jugendbronnen
+
+Heidelberg, du Jugendbronnen, Zauberin am Neckarstrand, solchen Fleck,
+uns warm zu sonnen, gab der Herrgott keinem Land! Schläger schwirren,
+Gläser klingen, alles atmet Frohnatur, : selbst im Laub die Vöglein singen:
+lagaudeamus igitur! :
+
+Schäumend tosten hier die Becher, und Herrn Otto Heinrich galt’s, der
+berühmter noch als Zecher, denn als Graf der schönen Pfalz. Nur ein
+Burgzwerg traf’s noch besser, der ging recte gleich zum Spund, und das
+grösste aller Fässer schlürft’ er aus bis auf den Grund!
+
+Seine Tat, so kühn gelungen, lebt im Lied unsterblich fort, und der Sänger,
+der’s gesungen, ragt in Erz gegossen dort. Schar um Schar zum Scheffelhaine
+wogt empor auf Waldespfad, und «Alt-Heidelberg, du feine» summt’s dort
+oben früh und spat!
+
+Frohe Stadt, zum Unterpfande, dass dein Glück dich nie verlässt, grüsst uns
+hoch von Dachesrande ein verweg’nes Storchennest! Ei, wie han’s die
+lebensfrischen Weiblein hier sich gut bestellt; geht der Storch im Neckar
+fischen, kommt was Lustiges zur Welt!
+
+So gedeih bei Storch und Kater, fröhliche Studentenschaft! Brausend klingt
+dein Landesvater stets bei Wein und Gerstensaft! Prosit deinem
+Sangesmeister, Prosit deinem grossen Zwerg, Scheffels und Perkeos Geister
+walten über Heidelberg!
+
+
+# Schweizerdegen
+
+Heisst ein Haus zum Schweizerdegen, lustig muss die Herberg sein; denn die
+Trommel spricht den Segen, und der Wirt schenkt Roten ein! : Kommen die
+Gäste, schön’ Wirtin, sie lacht, sie hat schon manchen zu Bette gebracht! :
+
+Ist kein Volk fast allerwegen, was da nicht schon eingekehrt, und der Wirt
+zum Schweizerdegen hat den Eintritt nie verwehrt, hat dann die blutige
+Zeche gemacht, dass die Frau Wirtin vor Freuden gelacht.
+
+Dreiundzwanzig Schilde blitzen von dem Giebel weit zu Tal; Zeug- und
+Bannerherren sitzen harrend in dem grossen Saal, lauschend, bis jauchzend
+die Mutter sie ruft und von den Schilden erklinget die Luft.
+
+All, die Wehr und Waffen pflegen, stehen auf zu Berg und Tal; hört, es klingt
+der Schweizerdegen, hört, es singt der alte Stahl! Tut ihm genug und erprobt
+ihn vereint! Besser, das Mütterchen lacht, als es weint!
+
+Wo in Ländern, schön gelegen, wo in altgetürmter Stadt, Schweizerherz und
+Schweizerdegen die gemeine Herrschaft hat, da ist die Mutter, so hold und so
+fein; lacht sie, so wird’s Frau Helvetia sein.
+
+
+# Zieh, Schimmel, zieh!
+
+Hier lagern wir am Heckendorn in Gras und grünen Ranken, und trinken aus
+bekränztem Horn den güld’nen Wein aus Franken. Es geht herum im Kreise
+und kommt zur Ruhe nie, ja nie; : dazu ertönt die Weise: «Zieh, Schimmel,
+zieh!» :
+
+Es sollt’ einmal ein Klosterknecht vor langen, langen Jahren viel Fässer Wein
+im Korbgeflecht ins Tal des Rheines fahren. Es stak im Strassenkote das
+Rösslein bis ans Knie. Der Fuhrmann bat und drohte: «Zieh, Schimmel,
+zieh!»
+
+Es brach das Rad, die Mähre dampft’, es brach die Wagenleiter, doch wie der
+Fuhrmann flucht’ und stampft’, das Rösslein ging nicht weiter. Es hebt und
+senkt die Ohren, trotz Peitschenknall und Hott und Hü − die Mahnung ging
+verloren: «Zieh, Schimmel, zieh!»
+
+Der Fuhrmann sah die Fässer an und sprach: «Sie sind zu schwere! Ich glaub,
+es wäre wohlgetan, wenn ich das kleinste leere.» Ansetzt’ er eins der Fässer,
+der Herr ihm Kraft verlieh; drauf sprach er: «Jetzt geht’s besser! Zieh,
+Schimmel, zieh!»
+
+Vorm Kloster hielt am siebten Tag das Schimmeltier, das brave, und auf den
+leeren Fässern lag der Klosterknecht im Schlafe. Des Pförtners Lachen
+schallte, der Kellner Zeter schrie; der Fuhrmann selig lallte: «Zieh,
+Schimmel, zieh!»
+
+Drauf sprach der Prior mit Bedacht: «Wir wollen’s ihm vergeben. Wo man
+den Bock zum Gärtner macht, gedeihen keine Reben. Der Wein sei ihm
+gegonnen, noch manches Fass liegt hie; schenkt ein vom Labebronnen!»
+Zieh, Schimmel, zieh!
+
+
+# Ergo bibamus
+
+Hier sind wir versammelt zu löblichem Tun, drum, Brüderchen, laergo
+bibamus! Die Gläser, sie klingen, Gespräche sie ruhn; beherziget: laergo
+bibamus! Das heisst noch ein altes, ein tüchtiges Wort, es passet zum ersten
+und passet so fort, und schallet, ein Echo, vom festlichen Ort, : ein herrliches:
+laergo bibamus! :
+
+Ich hatte mein freundliches Liebchen geseh’n, da dacht’ ich mir: laergo
+bibamus! Und nahte mich freundlich − da liess sie mich steh’n; ich half mir
+und dachte: labibamus! Und wenn sie versöhnet euch herzet und küsst, und
+wenn ihr das Herzen und Küssen vermisst, so bleibet nur, bis ihr was
+Besseres wisst, beim tröstlichen laergo bibamus!
+
+Mich ruft mein Geschick von den Freunden hinweg: ihr Redlichen, laergo
+bibamus! Ich scheide von hinnen mit leichtem Gepäck, drum doppeltes:
+laergo bibamus! Und was auch der Filz von dem Leibe sich schmorgt, so
+bleibt für den Heitern doch immer gesorgt, weil immer dem Frohen der
+Fröhliche borgt; drum, Brüderchen, laergo bibamus!
+
+Was sollen wir sagen zum heutigen Tag? Ich dächte nur: laergo bibamus! Er
+ist nun einmal von besonderem Schlag, drum immer auf’s neue: labibamus!
+Er führet die Freude durchs offene Tor, es glänzen die Wolken, es teilt sich
+der Flor, da scheint uns ein Bildchen, ein göttliches vor, wir klingen und
+singen: labibamus!
+
+gsw
+
+
+# Dr Trueberbueb
+
+I bin-e Ämmithaler, u desse bi n-i stolz. Es wachst i üsne Grebe viel saftigs
+Pfyffeholz, viel saftigs Pfyffeholz, u mänge chäche Bueb! : Ja, i bi n-e
+Ämmithaler, i bi n-e Bueb, e Bueb vo Trueb! :
+
+(Im Hütte, Brandösch, Twäre, im Fankhuus bis zum Napf, da förchtet me fy
+tapfer nid gleitig Chlupf u Chlapf, nid gleitig Chlupf u Chlapf, wi mänge
+bleiche Bueb! Ja, i bi n-e ...)
+
+My Vatter, dä het g’schwunge scho mängisch obenuus. Dä lehrt mi’s o am
+Abe u Morge vor em Huus, u Morge vor em Huus! I bi n-e Schwingerbueb!
+Ja, i bi n-e ...
+
+O d’Muetter isch e festi, si chunt vom Seltebach. Im Seltebach isch sälte es
+Meidschi bring u schwach, es Meidschi bring u schwach. I bi d’r Muetter
+Bueb! Ja, i bi n-e ...
+
+Nid alles mache d’Arme u d’Bei mit Schmalz u Saft. Mi muess im Härzen
+inne o ha di rächti Chraft, o ha di rächti Chraft. Muess sy n-e treue Bueb! Ja,
+i bi n-e ...
+
+Mym Herrgott wott i’s zeige und o mym Vaterland. We’s rüeft, so nimmt me
+d’Büchse rächt flingg u fest i d’Hand, rächt flingg u fest i d’Hand. I bi n-e
+Schwyzerbueb! Ja, i bi n-e ...
+
+
+# Schlendrian
+
+Ich gehe meinen Schlendrian und trinke meinen Wein, und wenn ich nicht
+bezahlen kann, so ist die Sorge mein. Ja, schlüg’ ich auch dies Glas in
+hunderttausend Trümmern, : so hat sich doch kein Mensch, kein Mensch
+darum zu kümmern! :
+
+Ich gehe meinen Schlendrian, zieh an, was mir gefällt; und wenn ich’s nicht
+mehr tragen kann, so mach ich es zu Geld. Und sollte auch mein Hemd durch
+tausend Löcher schimmern, so hat sich doch usw.
+
+Ich gehe meinen Schlendrian bis an mein kühles Grab, und schlägt mir auch
+der Sensenmann den letzten Segen ab. Ja, sollt’ ich auch dereinst noch in der
+Hölle wimmern, so hat sich doch usw.
+
+
+# Metzgete-Cantus
+
+Ich hab’ mein Herz in Seltisberg verloren in einer schönen Hornernacht. Ich
+hab ein Schwein verzehrt mitsamt den Ohren und seinem Leben den Garaus
+gemacht. Ich hab sein Fleisch mit rotem Wein begossen und mein Gedärme
+dient ihm jetzt als Grab, ich bin komplett in Seltisberg verschossen, wo ich
+ein Schwein verzehret hab!
+
+Das Essen ward serviert von schönen Frauen, ihr Busen war so weich und
+rund. Ich konnte sie von vorn und hinten schauen, nur nicht von unten wie
+der kleine Hund. Dies kleine Vieh sass unterm Tisch manierlich, was es beim
+Anblick dieser Frauen dacht’, hat mich zu guter Letzt − es ist possierlich −
+schier um die Seelenruh’ gebracht!
+
+Beim Abendschoppen hab’ ich Bier getrunken, dies Bier ward nicht von mir
+berappt. Ein Altherr hat die Rechnung hergewunken, man sieht, das Fest hat
+wundervoll geklappt! Doch erst vom Wein, den ich im Saale kippte, ward
+mein Gemüt im tiefsten Grund beschwingt, so dass auch hier das Fest
+vollkommen klippte, wovon mein Hund ein Liedchen singt.
+
+
+# Ich hatt’ einen Kameraden
+
+Ich hatt’ einen Kameraden, einen bessern findst du nit. Die Trommel schlug
+zum Streite, er ging an meiner Seite : im gleichen Schritt und Tritt. :
+
+Eine Kugel kam geflogen; gilt sie mir, oder gilt sie dir? Ihn hat sie
+weggerissen, er liegt zu meinen Füssen, als wär’s ein Stück von mir.
+
+Will mir die Hand noch reichen, derweil ich eben lad’. Kann dir die Hand
+nicht geben, bleib du im ew’gen Leben, mein guter Kamerad!
+
+
+# Burschenlied
+
+Ich lobe mir das Burschenleben, ein jeder lobt sich seinen Stand; der Freiheit
+hab’ ich mich ergeben, sie bleibt mein letztes Unterpfand. Studenten sind
+fidele Knochen, : kein Teufel hat sie je zerbrochen. :
+
+Die Hirsche, Hasen und Studenten erleiden gleiches Ungemach, denn jenen
+jagen Jäger, Hunde und diesen die Philister nach. Ein Bursch wie ich, was
+macht sich der daraus? Der säuft im Wirtshaus ganze Fässer aus! : Und die
+Füchse haben nichts danach zu fragen, schöne Mädel führen sie zum Tanz. :
+
+Brav Gelder muss der Vater schicken, wenn der Herr Sohn studieren soll, den
+Beutel mit Dukaten spicken, nur dann gerät das Söhnlein wohl. Ein Bursch
+wie ich usw.
+
+Die Mühlen können nichts erwerben, sobald das Wasser sie nicht treibt, so
+muss denn auch der Bursch verderben, wenn ihm der Wechsel aussen bleibt.
+Studenten sind usw.
+
+Und hat der Bursch kein Geld im Beutel, so pumpt er die Philister an und
+spricht: Es ist doch alles eitel, vom Burschen bis zum Bettelmann. Ein
+Bursch wie ich usw.
+
+Ach, wenn die lieben Eltern wüssten der Herren Söhne grosse Not, wie sie so
+flott verkeilen müssten, sie weinten sich die Äuglein rot. Indessen tun die
+Herren Söhne sich dann und wann gar trefflich bene.
+
+Soll ich für Ehr’ und Freiheit fechten, für’s Burschenwohl den Schläger
+zieh’n, gleich blinkt der Stahl in meiner Rechten, ein Freund wird mir zur
+Seite steh’n. Dann trinkt man nach gehabtem Spasse, ein volles Glas aus
+diesem Fasse.
+
+Und hat der Bursche aus studieret, so reiset er in patriam, mit seinen Heften
+ausstaffieret, und heisst ein grundgelehrter Mann. Ein Bursch wie ich usw.
+
+Und fällt der Bursche durchs Examen, so schert er sich den Teufel drum; er
+reiset doch in Gottes Namen keck in der ganzen Welt herum. Studenten sind
+usw.
+
+Sing, bet, und geh auf rechten Wegen und tu das Deine nur getreu; kommt dir
+ein schönes Kind entgegen, lass es nicht ungeküsst vorbei! Ein Bursch wie
+ich usw.
+
+
+# Die Rosenwirtschaft
+
+Ich reite über Berg und Tal auf meinem bunten Schecken, und lass im
+Wirtshaus allemal es mir beim Weine schmecken.
+
+Heh! Meister Wirt, schenkt Roten ein, lasst mich nicht lange warten! Da tritt
+des Wirtes Töchterlein mit Rosen aus dem Garten.
+
+Bist du der junge Reitersmann? So will ich dein gedenken. Ich hole gleich
+die schwere Kann’, dir Roten einzuschenken.
+
+Und wie die Maid die Kanne hebt, da fällt ein Röslein nieder; der junge
+Busen minnig bebt im buntgestickten Mieder.
+
+Das Röslein fiel auf meinen Fuss, es schäumt der Wein im Becher: Dies rote
+Röslein sei mein Gruss dem schmucken jungen Zecher!
+
+Ich steckt’ das Röslein auf den Hut und küsst’ des Mägdleins Stirne. Nie war
+ein Wein wie dieser gut! Hab Dank, liebwerte Dirne!
+
+
+# Jägers Liebeslied
+
+Ich schiess’ den Hirsch im wilden Forst, im tiefen Wald das Reh, den Adler
+auf der Klippe Horst, die Ente auf dem See; kein Ort, der Schutz gewähren
+kann, wo meine Büchse zielt, : und dennoch hab’ ich harter Mann die Liebe
+auch gefühlt. :
+
+Kampiere oft zur Winterszeit in Sturm und Wetternacht, hab’ überreift und
+überschneit den Stein zum Bett gemacht; auf Dornen schlief ich wie auf
+Flaum, vom Nordwind unberührt, und dennoch hat die harte Brust die Liebe
+auch gespürt.
+
+Der wilde Falk ist mein Gesell, der Wolf mein Kampfgespan; der Tag geht
+mir mit Hundsgebell, die Nacht mit Hussa an. Ein Tannreis schmückt statt
+Blumenzier den schweissbefleckten Hut, und dennoch schlug die Liebe mir
+ins wilde Jägerblut.
+
+
+# Das blonde Kind am Rhein
+
+Ich wand’re in die weite Welt auf Strassen und auf Gassen, da find’ ich alles
+wohlbestellt, nur mich find’ ich verlassen. Der Weg wird weit, am rauen
+Stein, da leg’ ich müd mich nieder. : Grüsst mir das blonde Kind am Rhein
+und sagt, ich käme wieder! :
+
+Und weiter, wenn der Morgen tagt, durch Sonnengold und Regen! Mir hat
+die Mutter oft gesagt: das Glück blüht allerwegen. Und doch hier kann es
+nimmer sein, kein einz’ger Stern fällt nieder. Grüsst mir usw.
+
+Wie hab’ beim Abschied ich gescherzt, als ob mich nichts gequälet! Nun
+weiss ich erst, wie sehr es schmerzt, wenn eins dem andern fehlet. Am Ufer
+wandelt sie allein, singt einsam meine Lieder. Grüsst mir usw.
+
+
+# Brandfuchs
+
+Ich war Brandfuchs noch an Jahren, zwei Semester zählt ich nur, und ich
+dachte nicht ans Sparen, folgte meiner Brüder Spur. N.N. gab uns fette
+Weide, und bediente unsern Bund; alles nahm ich auf die Kreide : und war
+immer auf dem Hund. :
+
+Wo drei Tische einsam stehen, soff ich manchen Rausch mir an; heimwärts
+konnt’ ich kaum mehr gehen, taumelnd schritt ich meine Bahn. War
+Kommers, ertönten Lieder aus des Branders voller Brust, dann erst soff ich
+alles nieder in bacchantisch wilder Lust.
+
+Auf den weinumlaubten Höhen hab’ ich öfters auch gejasst; mancher Stich
+musst’ mir entgehen, manches Nell ward abgefasst. Zwar die Mädchen hatt’
+ich lieber, doch ich scheute die Gefahr; denn schon mancher klagte drüber,
+dass er allzu glücklich war.
+
+Lieber als Professors Lehren war mir stets der Schläger Klang; wer wird eitle
+Worte hören, den der Burschen Geist durchdrang! Wer wird im Kollegium
+sitzen − es wär’ wider die Natur! − wenn die blanken Schläger blitzen und
+begrenzt ist die Mensur!
+
+Ob ich auch Kollegia schwänzte, im Kommershaus fehlt’ich nie, wo ich
+manches Glas kredenzte, manchen Schoppen wieder spie. Brüder, ehrt das
+Burschenleben, leider ist’s so eng begrenzt, darum lasst die Lehr’ euch
+geben: Pauket wacker, sauft und schwänzt!
+
+
+# O Akademia
+
+Ich zog, ich zog zur Musenstadt, mit lautem Sang und Valadri, : hob manches
+Gläschen zum Vivat, – o Akademia! :
+
+Und ihre Töchter jung und schlank, sie lauschten meinem Saitenspiel, und
+heisse Liebe war ihr Dank, o Akademia!
+
+Geschwungen hab ich meinen Speer, stand meinen Mann auf der Mensur;
+jetzt hab’ ich keine Nase mehr, o Akademia!
+
+So ging es zwölf Semester lang, und viel Dukaten zog ich blank bei
+Saitenspiel und Becherklang, o Akademia!
+
+Doch nun ist Sang und Klang verhallt, und Freund und Freundin zeigen mir,
+von fern den Rücken stolz und kalt, o Akademia!
+
+Denn keinen Kreuzer hab’ ich mehr und meine Wang’ ist bleich und blass, im
+Kopf da ist mir’s wüst und leer, o Akademia!
+
+Und Vater, Mutter starb zu Haus, vergessen ist ihr einz’ger Sohn, jetzt weiss
+ich nicht, wo ein und aus, o Akademia!
+
+Nur eine ist, die weint um mich, sie wohnt im fernen Heimatland, und ihren
+Ring versetzte ich, o Akademia!
+
+Verlor’nes Glück, fahr hin, ade! Ich wollt’ ich läg’ im kühlen Grab und
+schlief’ allein mit meinem Weh, o Akademia!
+
+
+# Des Trinkers Testament
+
+Ihr Brüder, wenn ich nicht mehr trinke und matt von Gicht und Podagra hin
+auf mein Krankenlager sinke, so glaubt, es sei mein Ende nah.
+
+Sterb’ ich nun heute oder morgen, so ist mein Testament gemacht; : für das
+Begräbnis müsst ihr sorgen, doch ohne Glanz und ohne Pracht. :
+
+Beim Sarge lasst es nur bewenden, legt mich nur in ein rhein’sches Fass, statt
+der Zitrone in den Händen reicht mir ein volles Deckelglas!
+
+Im Keller sollt ihr mich begraben, wo ich so manches Fass geleert; : den
+Kopf muss ich beim Zapfen haben, die Füsse nach der Wand gekehrt. :
+
+Und wollt ihr mich zum Grab geleiten, so folget alle Mann für Mann; um
+Gottes Willen lasst das Läuten, stosst wacker mit den Gläsern an!
+
+Auf meinen Grabstein setzt die Worte: Er ward geboren, wuchs und
+trank, : jetzt ruht er hier an diesem Orte, wo er gezecht sein Leben lang. :
+
+
+# Brüderschaft
+
+Im Krug zum grünen Kranze, da kehrt’ ich durstig ein; : da sass ein Wandrer
+drinnen, ja drinnen, am Tisch bei kühlem Wein. :
+
+Ein Glas ward eingegossen, das wurde nimmer leer; sein Haupt ruht’ auf dem
+Bündel, als wär’s ihm viel zu schwer.
+
+Ich tät mich zu ihm setzen, ich sah ihm ins Gesicht, das schien mir gar
+befreundet, und dennoch kannt’ ich’s nicht.
+
+Da sah auch mir ins Auge der fremde Wandersmann und füllte meinen
+Becher und sah mich wieder an.
+
+Hei! Was die Becher klangen, wie brannte Hand in Hand: «Es lebe die
+Liebste deine, Herzbruder, im Vaterland!»
+
+
+# Altassyrisch
+
+Im schwarzen Walfisch zu Askalon, da trank ein Mann drei Tag, : bis dass er
+steif wie ein Besenstiel am Marmortische lag. :
+
+Im schwarzen Walfisch zu Askalon, da sprach der Wirt: «Halt an! Der trinkt
+von meinem Dattelsaft, mehr als er zahlen kann.»
+
+Im schwarzen Walfisch zu Askalon, da bracht’ der Kellner Schar in
+Keilschrift auf sechs Ziegelstein’ dem Gast die Rechnung dar.
+
+Im schwarzen Walfisch zu Askalon, da sprach der Gast: «O weh! Mein bares
+Geld ging alles drauf im Lamm zu Ninive!»
+
+Im schwarzen Walfisch zu Askalon, da schlug die Uhr halb vier, da warf der
+Hausknecht aus Nubierland den Fremden vor die Tür.
+
+Im schwarzen Walfisch zu Askalon wird kein Prophet geehrt, und wer
+vergnügt dort leben will, zahlt bar, was er verzehrt.
+
+
+# Trinke!
+
+Im tiefen Keller sitz’ ich hier auf einem Fass voll Reben, bin frohen Muts und
+lasse mir vom Allerbesten geben. Der Küper zieht den Heber voll, gehorsam
+meinem Winke, füllt mir das Glas, ich halt’s empor und trinke, trinke, trinke.
+
+Mich plagt ein Dämon, Durst genannt, doch um ihn zu verscheuchen, nehm’
+ich mein Deckelglas zur Hand und lass mir Rheinwein reichen. Die ganze
+Welt erscheint mir nun in rosenroter Schminke; ich könnte keinem Leides
+tun, ich trinke, trinke, trinke.
+
+Allein mein Durst vermehrt sich nur bei jedem vollen Becher; dies ist die
+leidige Natur der echten Rheinweinzecher! Doch tröst’ich mich, wenn ich
+zuletzt vom Fass zu Boden sinke: Ich habe keine Pflicht verletzt, ich trinke,
+trinke, trinke.
+
+
+# In jedem vollen Glase Wein
+
+In jedem vollen Glase Wein seh’ unten auf dem Grund : ich deine hellen
+Äugelein :: und deinen süssen Mund. :
+
+Da trink’ ich schnell und warte nicht und küsse dich im Wein, aufs neu’ zu
+schau’n dein Angesicht, schenk’ schnell ich wieder ein!
+
+So füll’ und leer’ mein Gläschen ich und trinke immerzu. Nennt man mich
+nächstens liederlich, die Schuld, mein Schatz, hast du!
+
+
+# So studiert man
+
+In N.N. angekommen, : cerevis, : als Füchslein aufgenommen, : cerevis; :: da
+geht es gleich an ein flottes Kommersieren, denn studieren darf ein krasser
+Fuchs noch nicht, cerevis, cerevisia, cerevis. :
+
+Und hat mich wer touchieret, mit dem wird kontrahieret; da heisst es gleich,
+die Waffen sind aequal, Sekundanten und Paukanten sind bereit zu dem
+Skandal.
+
+Die Schuster und die Schneider, die pumpen uns die Kleider und kommt der
+Wechsel dann endlich angeflogen, ach, betrogen ist das arme Volk ja doch.
+
+Und hat man ausstudieret, Collegia wohl testieret, so reist man gleich in die
+Heimat seiner Lieben, doch geblieben ist des Burschen flotter Sinn.
+
+
+# Die Lindenwirtin
+
+Keinen Tropfen im Becher mehr und der Beutel schlaff und leer, lechzend
+Herz und Zunge. – Angetan hat mir’ s dein Wein, deiner Äuglein heller
+Schein, : Lindenwirtin, du junge! :
+
+«Angekreidet wird hier nicht, weil’s an Kreide uns gebricht», lacht die Wirtin
+heiter. «Hast du keinen Heller mehr, gib zum Pfand dein Ränzel her, aber!
+Trinke weiter!»
+
+Tauscht der Bursch sein Ränzel ein gegen einen Krug voll Wein, tät zum
+Geh’n sich wenden. Spricht die Wirtin: «Junges Blut, hast ja Mantel, Stab
+und Hut; trink und lass dich pfänden!»
+
+Da vertrank der Wandersknab Mantel, Hut und Wanderstab, sprach betrübt:
+«Ich scheide. Fahre wohl, du kühler Trank, Lindenwirtin jung und schlank,
+liebliche Augenweide!»
+
+Spricht zu ihm das schöne Weib: «Hast ja noch ein Herz im Leib, lass mir’s,
+trauter Wand’rer!» Was geschah, ich tu’s euch kund: auf der Wirtin rotem
+Mund brannte heiss ein andrer.
+
+Der dies neue Lied erdacht, sang’s in einer Sommernacht lustig in die Winde;
+vor ihm stund ein volles Glas, neben ihm Frau Wirtin sass unter der
+blühenden Linde.
+
+
+# Lippe-Detmold, eine wunderschöne Stadt
+
+: Lippe-Detmold, eine wunderschöne Stadt, darinnen ein Soldat. :: Ei, der
+muss marschieren in den Krieg, :: wo die Kanonen stehn. :
+
+Und als er in die grosse Stadt ’nein kam, wohl vor des Hauptmanns Haus, der
+Hauptmann schaut zum Fenster ’raus: «Mein Sohn, bist du schon da?»
+
+«Na, dann geh mal gleich zu deinem Feldweibel hin und zieh’ den Blaurock
+an, denn du musst marschieren in den Krieg, wo die Kanonen stehn.»
+
+Und als er in die grosse Schlacht ’nein kam, da fiel der erste Schuss. Ei, da
+liegt er nun und schreit so sehr, weil er getroffen ist.
+
+«Ach Kam’rad, lieber, lieber Kam’rad mein, schreibe du einen Schreibebrief,
+schreibe du, schreibe du mit meinem Blut, dass ich getroffen bin.»
+
+Und als er diese Worte ausgesprochen hatte, da fiel der zweite Schuss. Ei da
+liegt er nun und schreit nicht mehr, weil er getroffen ist.
+
+Als das der General erfuhr, da rauft er sich den Bart, «womit soll ich führen
+meinen Krieg? wenn mein Soldat ist tot!»
+
+Simserim ... , seine Seele schwebt empor; seine Seele schwebt zu Gott
+empor, wo die Kanonen stehen.
+
+
+# Eine kleine Liaison
+
+frLouis Quatorze, so hiess der König, seine Geliebte, die frLavalliere, und er
+liebte sie nicht wenig, alle Tage noch viel mehr. Und sie wollte widerstreben,
+doch er sagt: «Was ist dabei? Ist die Rechte auch vergeben, meine Linke ist
+noch frei.» Es gehört zum guten Ton eine kleine frLiaison.
+
+Doch ins Kloster kam gefahren eines Tag’s die frLavalliere, denn nach zwei
+galanten Jahren drückte sie die Reue sehr. Und der Prior wollt’s nicht dulden,
+doch sie schaut’ ihn bittend an: «Ist so gross denn mein Verschulden, sag,
+was hab’ ich denn getan?» Es gehört usw.
+
+frLouis Quatorze auf seinem Schlosse sehnt’ sich nach der frLavalliere, und
+er stieg in die Karosse, vierzehn Rosse vor ihm her, holt’ sein Liebchen aus
+der Klause, weil er wieder küssen will, und sie fährt mit ihm nach Hause und
+der Prior lächelt’ still. Es gehört usw.
+
+
+# Mein Lebenslauf
+
+Mein Lebenslauf ist Lieb’ und Lust und lauter Liederklang; ein frohes Lied
+aus heit’rer Brust macht froh den Lebensgang. Man geht bergaus, man geht
+bergein, heut grad und morgen krumm; durch Sorgen wird’s nicht anders
+sein, was kümmr’ ich mich darum! : Heidi, heida : was kümmr’ ich mich
+darum!
+
+Das Leben wird, der Traube gleich, gekeltert und gepresst; so gibt es Most,
+wird freudenreich und feiert manches Fest. Drum zag’ich nicht, engt mir die
+Brust des Schicksals Unmut ein; bald braus’ ich auf in Lieb und Lust und
+werde reiner Wein! Heidi usw.
+
+Die Zeit ist schlecht, mit Sorgen trägt sich schon das junge Blut; doch wo ein
+Herz voll Freude schlägt, da ist die Zeit noch gut. Herein, herein, du lieber
+Gast, du, Freude, komm zum Mahl, würz’ uns, was du bescheret hast,
+kredenze den Pokal! Heidi usw.
+
+Weg, Grillen, wie’s in Zukunft geht, und wer den Zepter führt! Das Glück auf
+einer Kugel steht und wunderbar regiert. Die Krone nehme Bacchus hin, nur
+der soll König sein! Und Freude sei die Königin, die Residenz am Rhein!
+Heidi usw.
+
+Beim grossen Fass zu Heidelberg da sitze der Senat und auf dem Schloss
+Johannisberg der hochwohlweise Rat! Der Herrn Minister Regiment soll
+beim Burgunderwein, der Kriegsrat und das Parlament soll beim
+Champagner sein! Heidi usw.
+
+So sind die Rollen ausgeteilt und alles wohl bestellt; so wird die kranke Zeit
+geheilt und jung die alte Welt. Der Traube Saft kühlt heisse Glut, drum leb’
+das neue Reich, ein Zechermut, ein wahrer Mut: Der Wein macht alles
+gleich! Heidi usw.
+
+
+# Der Prager Musikant
+
+Mit der Fiedel auf dem Rucken, mit dem Kappel in der Hand zieh’n wir
+Prager Musikanten durch das weite Christenland. Unser Schutzpatron im
+Himmel heisst der heil’ ge Nepomuk, steht mit seinem Sternenkränzel mitten
+auf der Prager Bruck. Als ich da hinausgewandert, hab ich Reverenz
+gemacht, ein Gebet ihm aus dem Kopfe recht bedächtig hergesagt.
+
+Steht also in keinem Büchel, wie man’s auf dem Herzen hat: Wanderschaft
+mit leerem Beutel und ein Schätzel in der Stadt! Wenn das Mädel singen
+könnte, wär’s gezogen mit hinaus; doch es hat ’ne heis’re Kehle, darum liess
+ich es zu Haus. Ei, da gab es nasse Augen, ’s war mir selbst nicht einerlei,
+sprach ich: «’s ist ja nicht für ewig, schönstes Nannerl, lass mich frei!»
+
+Und ich schlüpft’ aus ihren Armen, aus der Kammer, aus dem Haus, konnt’
+nicht wieder rückwärts schauen, bis ich war zur Stadt hinaus. Da hab’ ich
+dies Lied gesungen, hab’ die Fiedel ’zu gespielt, bis ich in den Morgenlüften
+auf der Brust mich leicht gefühlt. Manches Vöglein hat’s vernommen, flög’
+nur eins an Liebchens Ohr, säng’ ihr, wenn sie weinen wollte, dieses frische
+Liedel vor!
+
+Wenn ich aus der Fremde komme, spiel’ ich auf aus anderm Ton, abends
+unter ihrem Fenster, «Schätzel, Schätzel, schläfst du schon?» Hoch
+geschwenkt den vollen Beutel, das gibt eine Musika. ’s Fenster klirrt, es
+rauscht der Laden, heilige Cäcilia! All ihr Prager Musikanten, auf, heraus mit
+Horn und Bass, spielt den schönsten Hochzeitsreigen, morgen leeren wir ein
+Fass!
+
+
+# Heitere Welt
+
+Mit Männern sich geschlagen, mit Weibern sich vertragen und mehr Kredit
+als Geld, so kommt man durch die Welt.
+
+Heut’ lieb’ ich die Johanne und morgen die Susanne; die Lieb’ ist immer neu,
+das ist Studententreu.
+
+Und kommt der Wechsel heute, so sind wir reiche Leute und haben Geld wie
+Heu; doch morgen ist’s vorbei.
+
+Dann kommen die Philister mit ihrem Pumpregister, belagert ist die Schwell’
+von Schuster und Pedell.
+
+Und fehlt das Geld zuweilen, so heisst es gleich: Verkeilen! Für diesen Rock,
+Hebrä’r, gib gleich die Spiesse her!
+
+Bestaubt sind unsre Bücher, der Bierkrug macht uns klüger, das Bier schafft
+uns Genuss, die Bücher nur Verdruss.
+
+Das Hemd vom Leib verkeilen, stets in der Kneipe weilen, bezopft nach
+Hause geh’n, das heisst Komment versteh’n.
+
+
+# Pauktag
+
+N.N. ist ’ne schöne Stadt, auf Ehre; denk’ ich daran, kommt mir die
+Trauerzähre. In Strömen Blut dort fliessen tut, und wie’s so leicht geschieht
+erzählt mein Lied. : Radirullarulla rulla radirulla ho! : In Strömen Blut dort
+fliessen tut, und wie’s so leicht geschieht erzählt mein Lied.
+
+Studentenwüteriche dorten hausen, zerfleischen sich das Haar, es ist zum
+Grausen; zerfleischen sich ganz fürchterlich mit Säbel und Rapier zum
+Pläsier!
+
+Ärger noch als wie in Oberbayern, wo sie die Kirchweih mit den Messern
+feiern, treibt’s der Student stets nach Komment, und macht zur Kotelette sein
+Porträte.
+
+Blei und Pulver braucht man zum Duelle; und sagst du was − gleich hast du
+eine Schelle! Heiss wogt der Kampf auf Pulverdampf; hin sinkt der Jüngling
+bleich, eine Leich.
+
+Ich bin selbst nur einmal ausgegangen, weil mir vor langen Messern täte
+bangen. Doch einmal schlug ich voller Wut den Gegner auf den Hut, das war
+gut!
+
+Nasen, Ohren, halbe Köpfe fliegen; Arm und Bein zerfetzt am Boden liegen.
+Durch Gegners Brust, es stösst mit Lust der Fechter seinen Stahl, welche
+Qual!
+
+Horchet auf, ihr Hüter des Gesetzes! Verächter des Studenten-Paukgesetzes!
+Horcht überall auf Waffenschall und seid stets auf der Spur der Mensur.
+
+Wieviel schöner wenn die Herrn Studenten zu zwei und zwei, den
+Rosenkranz in Händen; zu zwei und zwei, zur Litanei, zur Prozession herbei
+mit Geschrei!
+
+Bald wird überall man es verkünden, N.N. sei ein Raufboldnest voll Sünden.
+Das Renommee geht uns ade, die alma mater wird ruiniert.
+
+
+# Wanderlied der Prager Studenten
+
+Nach Süden nun sich lenken die Vöglein allzumal; viel Wandrer lustig
+schwenken die Hüt’ im Morgenstrahl. Das sind die Herrn Studenten, zum Tor
+hinaus es geht; auf ihren Instrumenten sie blasen zum Valet: Ade in die Läng
+und Breite, o Prag, wir zieh’n in die Weite! laEt habeat bonam pacem, qui
+sedet post fornacem!
+
+Nachts wir durchs Städtlein schweifen, die Fenster schimmern weit, am
+Fenster dreh’n und schleifen viel schön geputzte Leut’. Wir blasen vor den
+Türen und haben Durst genug; das kommt vom Musizieren, Herr Wirt, einen
+frischen Trunk! Und siehe, über ein kleines mit einer Kanne Weines lavenit
+ex sua domo beatus ille homo.
+
+Nun weht schon durch die Wälder der kalte Boreas; wir streichen durch die
+Felder von Schnee und Regen nass; der Mantel fliegt im Winde, zerrissen
+sind die Schuh, da blasen wir geschwinde und singen noch dazu: laBeatus
+ille homo, qui sedet in sua domo et sedet post fornacem et habet bonam
+pacem!
+
+
+# Die Tage der Rosen
+
+Noch ist die blühende, goldene Zeit, o du schöne Welt, wie bist du so weit!
+Und so weit ist mein Herz, und so klar wie der Tag, wie die Lüfte,
+durchjubelt von Lerchenschlag! Ihr Fröhlichen, singt, weil das Leben noch
+mait: Noch ist die schöne, die blühende Zeit, noch sind : die Tage der
+Rosen! :
+
+Frei ist das Herz und frei ist das Lied und frei ist der Bursch, der die Welt
+durchzieht; und ein rosiger Kuss ist nicht minder frei, so spröd und
+verschämt auch die Lippe sei. Wo ein Lied erklingt, wo ein Kuss sich beut,
+da heisst’s: Noch ist die blühende, goldene Zeit, noch sind die Tage der
+Rosen.
+
+Ja, im Herzen tief innen ist alles daheim, der Freude Saaten, der Schmerzen
+Keim. Drum frisch sei das Herz und lebendig der Sinn, dann brauset, ihr
+Stürme, daher und dahin! Wir aber sind allzeit zu singen bereit: Noch ist die
+blühende, goldene Zeit, noch sind die Tage der Rosen!
+
+
+# In der Ferne
+
+Nun leb wohl, du kleine Gasse, nun ade, du stilles Dach! Vater, Mutter sah’n
+mir traurig : und die Liebste sah mir nach. :
+
+Hier in weiter, weiter Ferne, wie’s mich nach der Heimat zieht! Lustig singen
+die Gesellen, doch es ist ein falsches Lied.
+
+Andre Städtchen kommen freilich, andre Mädchen zu Gesicht; ach, wohl sind
+es andre Mädchen, doch die Eine ist es nicht.
+
+Andre Städtchen, andre Mädchen, ich da mitten drin so stumm! Andre
+Mädchen, andre Städtchen, o wie gerne kehrt’ ich um!
+
+
+# Rückblick eines alten Burschen
+
+O alte Burschenherrlichkeit! Wohin bist du entschwunden? Nie kehrst du
+wieder, gold’ne Zeit, so froh und ungebunden! Vergebens spähe ich umher,
+ich finde deine Spur nicht mehr. la: O jerum, jerum, jerum, o quae mutatio
+rerum! :
+
+Den Burschenhut bedeckt der Staub, es sank der Flaus in Trümmer, der
+Schläger ward des Rostes Raub, erblichen ist sein Schimmer, verklungen der
+Kommersgesang, verhallt Rapier- und Sporenklang. laO jerum usw.
+
+Wo sind sie, die vom breiten Stein nicht wankten und nicht wichen, die ohne
+Spiess bei Scherz und Wein den Herrn der Erde glichen? Sie zogen mit
+gesenktem Blick in das Philisterland zurück. laO jerum usw.
+
+Da schreibt mit finsterm Amtsgesicht der eine Relationen, der andre seufzt
+beim Unterricht, und der macht Rezensionen, der schilt die sünd’ge Seele aus
+und der flickt ihr verfall’nes Haus. laO jerum usw.
+
+Allein das rechte Burschenherz kann nimmermehr erkalten; im Ernste wird,
+wie hier im Scherz, der rechte Sinn stets walten, die alte Schale nur ist fern,
+geblieben ist uns doch der Kern, und den lasst fest uns halten, wir bleiben
+stets die Alten!
+
+Drum, Freunde! Reichet euch die Hand, damit es sich erneue, der alten
+Freundschaft heil’ ges Band, das alte Band der Treue. Klingt an und hebt die
+Gläser hoch, die alten Burschen leben noch, noch lebt die alte Treue, sie lebe
+stets aufs Neue!
+
+
+# O Tannenbaum
+
+O Tannenbaum, o Tannenbaum, wie treu sind deine Blätter! Du grünst nicht
+nur zur Sommerzeit, nein, auch im Winter, wenn es schneit. O Tannenbaum,
+o Tannenbaum, wie treu sind deine Blätter!
+
+O Mägdelein, o Mägdelein, wie falsch ist dein Gemüte! Du schwurst mir
+Treu in meinem Glück, nun arm ich bin, gehst du zurück. O Mägdelein, o
+Mägdelein, wie falsch ist dein Gemüte!
+
+Die Nachtigall, die Nachtigall nahmst du dir zum Exempel. Sie bleibt, so
+lang der Sommer lacht, im Herbst sie sich von dannen macht. Die Nachtigall,
+die Nachtigall nahmst du dir zum Exempel.
+
+Der Bach im Tal, der Bach im Tal ist deiner Falschheit Spiegel. Er strömt
+allein, wenn Regen fliesst, die Dürre bald den Quell verschliesst. Der Bach
+im Tal, der Bach im Tal ist deiner Falschheit Spiegel.
+
+
+# Filia hospitalis
+
+O wonnevolle Jugendzeit mit Freuden ohne Ende, mit Minnefahrten weit und
+breit, wo sich die Schönste fände. Ich grüsse dich, du junges Blut, bin jedem
+hübschen Weibe gut, : und doch ist nichts laaequalis der lafilia hospitalis. :
+
+Ich kam als krasser Fuchs hierher und spähte in den Gassen, wo mir ein Bett
+und Zimmer wär, den langen Leib zu fassen. Fand Sofa nicht, noch
+Stiefelknecht, und doch war mir die Bude recht, denn keine ist laaequalis der
+lafilia hospitalis.
+
+Sie ist ein gar zu herzig Kind mit ihren blonden Zöpfen, die Füsschen laufen
+wie der Wind im Schuh mit Quast und Knöpfchen; die Schürze bauscht sich
+auf der Brust, allwo ich schau, ist eitel Lust, und keine ist laaequalis der
+lafilia hospitalis.
+
+Im Haus herrscht sie als guter Geist und zeigt’s an jedem Ersten: Der einz’ ge
+Schüler war verreist, die Kasse mir am leersten. Da wurd’ ihr Wort mir
+Schutz und Schild und stimmte den Philister mild, drum ist auch nichts
+laaequalis der lafilia hospitalis.
+
+Vier Mieter hat sie: Der Jurist besucht nur feine Kreise, der Mediziner ist
+kein Christ, der Theolog zu weise. − Doch mir, mir dem Philologus, gab sie
+in Züchten einen Kuss, und keine ist laaequalis der lafilia hospitalis.
+
+Auf eines hält sie scharfe Wacht und lässt nicht mit sich spassen: Wer je der
+Magd den Hof gemacht, würd’ nimmer ihr mehr passen. Zwar das
+Mamsellchen am Büfett ist höchst pikant und äusserst nett − und dennoch
+nicht laaequalis der lafilia hospitalis.
+
+Du rheinisch Mädchen, wüsst’ ich doch, was Gott mit uns beschlossen! − Ich
+schanz’ mir in den Kopf ein Loch und ochse unverdrossen. Und wärst du mir
+auch nie beschert, zeitlebens bleibst du hochgeehrt, weil keine dir laaequalis,
+dir lafilia hospitalis.
+
+
+# Rückkehr des alten Studenten
+
+Reicht mir das alte Burschenband, reicht mir die alte Klinge, dass ich zum
+Ritt ’gen Heidelberg mich jetzt aufs Rösslein schwinge, heut fühl’ ich heiss’
+Studentenblut durchs Herz noch einmal wallen, : mir ist, als hört’ ich
+Becherklang und Schlägerklirren schallen. :
+
+Mir ist, als säh’ ich jugendfrisch die alten Freunde wieder, als hörte ich von
+Lieb’ und Wein die alten frohen Lieder. Und wie von jungem Liebestraum die
+alten Lieder tönen, mir ist, als säh’ ich wieder sie, die Schönste aller
+Schönen.
+
+Da streut noch einmal auf die Welt der Frühling seine Blüten, wie damals, als
+in Lieb’ und Lust die jungen Herzen glühten. Füllt mir den Becher bis zum
+Rand, und hell sei angeklungen, zu Ehr und Preis von Heidelberg, dem alten
+ewig jungen!
+
+
+# Farbenlied der Turnerschaft Alemannia Basel
+
+Rot, Weiss und Schwarz schmückt Alemannias Brüder, ziert unsre freie
+Turnerschaft; und eint als eines festen Bundes Glieder der Burschen Schar zu
+Tat und Kraft. : Wir tragen das rot-weiss und schwarze Band für Eintracht,
+Freiheit und Vaterland. :
+
+Wir halten hoch das Vaterland, das schöne, und wollen Rot und Weiss ihm
+weih’n. Wir ehren Weiss und Schwarz als treue Söhne der hehren Musenstadt
+am Rhein. Wir schwören dem Vaterland einig und stark mit Rot-Weiss und
+Schwarz an des Landes Mark.
+
+Rot wie die Liebe sei der Brüder Zeichen, weiss, wie die Unschuld, die im
+Herzen glüht; und dass wir nie, im Tode selbst nicht weichen, sei schwarz das
+Band, das uns umzieht. Das blitzende Schwert mit Rot-Weiss und Schwarz,
+Alemannias Ehre in Treu’ bewahrt’s.
+
+Rot perlt das Blut der Trauben im Pokale, rot lacht des Mägdlein Mund beim
+Tanz, und silberweiss herab vom blüh’nden Tale strahlt unser Firnen lichter
+Glanz. Rotröslein, Weisslilien und Mädchens Schwarzhaar! Alemannenlieb’
+blühe uns immerdar!
+
+Und muss uns jäh ein treuer Freund verlassen, gebt Rot-Weiss-Schwarz ihm
+in die Gruft hinab; wenn Alemannias Brüder einst erblassen, dann werft ihr
+Band ins kühle Grab. Sie trugen das rot-weiss und schwarze Band für
+Eintracht, Freiheit und Vaterland.
+
+
+# Mutatio rerum
+
+Schon wieder zog der Herbst ins Land und bunte Farben wob er; schon
+meldet das Kalenderblatt: «Wir stehen im Oktober!» Und trübe fliesst der
+neue Most, man schenkt ihn ein und trinkt sich Prost. : Der Jägersmann, lao
+jerum, hängt wieder sein Gewehr um. :
+
+Kein weisses Gilet schmückt jetzt mehr des Mannenvolkes Busen, die
+Frauenzimmer kaufen sich nicht mehr durchbrochne Blusen; zum Schutz von
+Lunge, Herz und Darm hält sich ein jeder möglichst warm. Der
+Bürgersmann, o jerum, der schnallt sich etwas Schmer um.
+
+Ob ich im Frühjahr wiederum zu meinem Schoppen wandre? Fehlt an der
+Tafelrunde dann der eine oder andre? Vielleicht bin ich nicht mehr dabei und
+wird mein Stuhl am Tische frei, dann sagt man wohl: la«O jerum, es stand
+ein alter Herr um.»
+
+
+# Farbenlied der Turnerschaft Rhenania Bern
+
+Schwarz, Rot, Weiss in goldnem Rahmen schmücket unser Band die Brust;
+Traun, es birgt die schönsten Namen: Liebe, Treue, Jugendlust. Ja, treu den
+Freunden und treu dem Verein, Brüder, das lasset uns alle sein!
+
+Schwarz und Rot, die Stadt der Musen; Rot und Weiss, das Vaterland; an des
+Liebchens treuem Busen weiss der Unschuld Rose prangt. Ja, diese drei
+Farben in goldenem Schein sollen den wackern Turner erfreu’n.
+
+Schwarz sind Liebchens Augensterne, rot der Liebe süss Panier; weiss der
+Firn in blauer Ferne, unsres Landes schönste Zier. Ja, Schwarz, Rot und
+Weiss heisst unser Band, heisst Liebe, heisst Treue, heisst Vaterland.
+
+
+# Bier-Königreich
+
+Sind wir nicht zur Herrlichkeit geboren? Sind wir nicht gar schnell
+emporgedieh’n? Malz und Hopfen sei an uns verloren, haben unsre Alten oft
+geschrien. : Säh’n sie uns doch hier, valleralla! bei dem lieben Bier,
+valleralla! das uns Amt und Würden hat verlieh’n. :
+
+Ganz Europa wundert sich nicht wenig, welch ein neues Reich entstanden ist.
+Wer am meisten trinken kann ist König, Bischof, wer die meisten Mädchen
+küsst. Wer da kneipt recht brav, heisst bei uns Herr Graf; wer da randaliert,
+wird Polizist.
+
+Unser Arzt studiert den Katzenjammer, Trinkgesänge schreibt der Hofpoet;
+der Hofmundschenk inspiziert die Kammer, wo am schwarzen Brett die
+Rechnung steht; und der Herr Finanz liquidiert mit Glanz, wenn man lacontra
+usum sich vergeht.
+
+Um den Gerstensaft, ihr edlen Seelen, dreht sich unser ganzer Staat herum,
+Brüder, zieht, verdoppelt eure Kehlen, bis die Wände kreisen um und um!
+Bringet Fass auf Fass! aus dem Fass ins Glas! aus dem Glas ins Refektorium!
+
+Im Olymp bei festlichen Gelagen, Brüder, sind wir uns einander nah; wenn
+dann Hebe kommt, um uns zu fragen: «Wünschen Sie vielleicht Ambrosia?»
+Wie kommst du mir für? Bring mir bayrisch Bier! ewig bayrisch Bier,
+halleluja!
+
+
+# Sitzt e glei Vogel
+
+: Sitzt e glei Vogel im Tannewald, duet nix als singe und schrein – juhee! :
+Was wird’ s für e Vogerl sein, das so duet singe und schrein? : ’s wird wohl e
+Nachtigall sein. :
+
+Maderl, was sagens denn deine Leut, dass dich das Lieben so freut? Meine
+Leut sagens alleweil: «’s Lieben isch weit und breit, ’s Lieben isch allweil im
+Schuss!»
+
+Maderl, was kriegst du für e Heiratsguet, dass du die Köpferl so trägst?
+Trallalalala ... «Nadle und e Fade und e Fingerhuet und e verroschteti
+Scher!»
+
+Maderl, was willst du jetzt fange a, hescht jo kei Kind und kei Ma? «Was ich
+will fange a? Ich fang zue singe a: Holdrio, holdrio, holdrio, ho; ’s git mer kei
+Mensch nix derzue!»
+
+
+# Studentenuhr
+
+So pünktlich zur Sekunde trifft keine Uhr wohl ein, als ich zur Abendstunde
+beim edlen Gerstenwein. Da trink’ ich lang und passe nicht auf ein
+Zifferblatt; : ich hör’s am leeren Fasse, wie viel’s geschlagen hat. :
+
+Geh nachts ich vom Gelage mit frohem Sang nach Haus, so kenn’ ich ohne
+Frage mich in der Zeit doch aus. Man kennt’s an meinem Gange, am Gange
+krumm und grad, man kennt es am Gesange, wie viel’s geschlagen hat.
+
+Seh’ ich ein Haus von weitem, wo ein lieb’ Mädel träumt, sing’ ich zu allen
+Zeiten ein Lied ihr ungesäumt. Und wird’s im Zimmer helle, wär’ es auch
+noch so spat, so weiss ich auf der Stelle, wie viel’s geschlagen hat.
+
+
+# Rheinlied
+
+Strömt herbei, ihr Völkerscharen, zu des grünen Rheines Strand! Wollt ihr
+echte Lust erfahren, o so reichet mir die Hand! Nur am Rheine will ich leben,
+nur am Rhein geboren sein, : wo die Berge tragen Reben und die Reben
+gold’nen Wein! :
+
+Mögen tausend schöne Frauen locken auch mit aller Pracht, wo Italiens
+schöne Auen, wo in Düften schwelgt die Nacht; nur am Rheine will ich
+lieben, denn in jedes Auges Schein stehet feurig dort geschrieben: Nur am
+Rheine darfst du frei’n!
+
+Mag der Franzmann eifrig loben seines Weines Allgewalt, mag er von
+Begeist’rung toben, wenn der Kork der Flasche knallt; nur am Rheine will
+ich trinken einen echten deutschen Trank, und so lang noch Becher blinken,
+töne laut ihm Lob und Dank!
+
+Und wenn ich gelebt in Wonne und geliebt in Seligkeit und geleeret manche
+Tonne, wandr’ ich gern zur Ewigkeit. Nur am Rheine will ich sterben, nur am
+Rhein grabt mir mein Grab, und des letzten Glases Scherben werft in meine
+Gruft hinab!
+
+
+# Studentenhymne
+
+Student sein, wenn die Veilchen blühen, das erste Lied die Lerche singt, der
+Maiensonne junges Glühen triebweckend in die Erde dringt. Student sein,
+wenn die weissen Schleier vom blauen Himmel grüssend weh’n: : Das ist des
+Daseins schönste Feier! Herr, lass sie nie zu Ende gehn! :
+
+Student sein, wenn die Humpen kreisen, in lieberschloss’nem Freundesbund
+von alter Treue bei den Weisen der Väter jauchzt der junge Mund. Student
+sein, wenn die Herzen freier auf der Begeist’rung Höhe stehn: Das ist des
+Lebens schönste Feier! Herr, lass sie nie zu Ende gehn!
+
+Student sein, wenn zwei Augen locken, ein süsser Mund verschwiegen küsst,
+dass jählings alle Pulse stocken, als ob im Rausch man sterben müsst’.
+Student sein, in der Liebe Morgen, wenn jeder Wunsch ein frommes Fleh’n:
+Das ist das Leben ohne Sorgen! Herr, lass es nie vorübergehn!
+
+Student sein, wenn die Hiebe fallen im scharfen Gang, der selbstgewählt, im
+blut’gen Aufeinanderprallen der Mut sich für das Leben stählt. Student sein,
+wenn dein einzig Sorgen, ob fest und tapfer du wirst steh’n an deines Lebens
+Wagemorgen, Herr, lass die Zeiten nie vergehn!
+
+
+# Studenten leben
+
+’s gibt kein schöner Leben als Studentenleben, wie es Bacchus und
+Gambrinus schuf; in die Kneipen laufen und sein Geld versaufen ist ein
+hoher, herrlicher Beruf. Ist das Moos entschwunden, wird ein Bär gebunden,
+immer geht’s in ladulci jubilo; ist kein Geld in Bänken, ist doch Pump in
+Schenken für den kreuzfidelen Studio.
+
+Auch von Lieb umgeben ist’s Studentenleben, uns beschützet Venus Cypria.
+Mädchen, die da lieben und das Küssen üben, waren stets in schwerer Menge
+da. Aber die da schmachten und platonisch trachten − ach, die liebe Unschuld
+tut nur so; denn so recht inwendig brennt es ganz unbändig für den
+kreuzfidelen Studio.
+
+Will zum Kontrahieren einer mich touchieren, gleich gefordert wird er,
+augenblicks: «Bist ein dummer Junge!» Und mit raschem Sprunge auf
+Mensur geht’s im Paukantenwichs. Schleppfuchs muss die Waffen auf den
+Paukplatz schaffen, Quarten pfeifen, Terzen schwirren froh. Hat ein Schmiss
+gesessen, ist der Tusch vergessen von dem kreuzfidelen Studio.
+
+Vater spricht: «Das Raufen und das Kneipenlaufen nutzt dir zum Examen
+keinen Deut!» Doch dabei vergisst er, dass er ein Philister und dass jedes
+Ding hat seine Zeit. Traun! das hiesse lästern, schon nach sechs Semestern
+ein Examen! nein, das geht nicht so! Möchte nie auf Erden etwas andres
+werden als ein kreuzfideler Studio.
+
+gsw
+
+
+# ’s isch nümme die Zyt
+
+’s isch nümme die Zyt won albe n’isch gsy, wo-n i mit mym Schimmeli uf
+d’Schmidte bi gsy, juchhe, wo-n i mit mym Schimmeli uf d’Schmidte bi
+gsy : Holedulidulioh, holedulidulioh, joholedulidulioh, holedulidulioh,
+holeoh. :
+
+«Grüess Gott wohl, Herr Nagler», «grüess Gott wohl, Herr Schmid», «i han
+es schöns Schümeli, vernaglet mer’s nid.»
+
+My Schatz isch e Schmid, aber rych isch är nid. Was frag ich nach Rychtum?
+Bi däm schlaf i nid!
+
+gsw
+
+
+# De Rosegarte z Mailand
+
+’s wott aber e luschtige Summer gä, die Buebe salbe d’Schue. : Mit Trummen
+und mit Pfyfe wei sie am Mailand zue. : Ach Hansli blyb doch hie, süsch
+hani längi Zyt! : Was wottsch doch i das Mailand zieh, das isch au gar so
+wyt? :
+
+Und wenn das Mailand wyter wär, vil hundert Stund vo hie, mit Trummen
+und mit Pfyfe wei jetz die Buebe zieh.
+
+Wenns aber e luschtige Summer git, bhets ke Bueb meh bim Schatz; im
+Rosegarte z Mailand hets no für mänge Platz.
+
+
+# Gold und Silber
+
+Trautes Schätzchen, trag’ nicht Leid, blicke nicht so trübe, dass du nicht die
+einz’ge Maid, die ich herzlich liebe; schau Studenten machen’s so, lieben
+mehr als eine; : bin ich nicht mehr Studio, lieb ich dich alleine! :
+
+Gräm’ dich nicht den ganzen Tag, dass wir gerne trinken, dass ich dich nicht
+küssen mag, wenn die Gläser blinken; schau, Studenten machen’s so, sitzen
+gern beim Weine; bin ich nicht mehr Studio, lieb ich dich alleine!
+
+Wer nur eine einz’ ge küsst, bis zur Jahreswende, und die andern schüchtern
+grüsst, der ist kein Studente; wer noch niemals trunken war, der hat nie
+studieret, wär er noch so manches Jahr ins Kolleg marschieret.
+
+Gold und Silber lieb’ ich sehr, kann’s auch gut gebrauchen, hätt’ ich nur ein
+ganzes Meer, mich hinein zu tauchen; ’s braucht ja nicht geprägt zu sein,
+hab’s auch sonst ganz gerne, sei’s des Mondes Silberschein, sei’s das Gold
+der Sterne.
+
+Doch viel schöner ist das Gold, das vom Lockenköpfchen meines Liebchens
+niederrollt in zwei blonden Zöpfchen. Darum komm, mein liebes Kind, lass
+dich herzen, küssen, bis die Locken silbern sind und wir scheiden müssen.
+
+Seht, wie blinkt der gold’ne Wein hier in meinem Becher; hört, wie klingt so
+silberrein froher Sang der Zecher! Dass die Zeit einst golden war, will ich
+nicht bestreiten, denk’ ich doch im Silberhaar gern vergangner Zeiten.
+
+Deine Mamma hat gesagt, einen Kuss in Ehren, darfst du einem Studio
+nimmermehr verwehren; was die Mamma hat gesagt, darfst du ruhig glauben,
+lass von einem Studio einen Kuss dir rauben!
+
+
+# Frühschoppen-Cantus
+
+Trinke nie ein Glas zu wenig, denn kein Pfaffe oder König kann von diesem
+Staatsverbrechen deine Seele ledig sprechen, : valleri, vallera, valleri, ha, ha,
+ha, ha, ha, ha! :
+
+Lieber eins zuviel getrunken, etwas schwer ins Bett gesunken, tags darauf in
+stiller Kammer Busse tun im Katzenjammer. Valleri usw.
+
+Um den Jammer zu vertreiben, will ich ein Rezept verschreiben, oft schon
+hat es zugetroffen: Es wird immer fortgesoffen! Valleri usw.
+
+Schon das Kind in seiner Schrulle trinkt aus einer grossen Pulle, von der
+Wiege bis zur Bahre ist der Suff das einzig Wahre! Valleri usw.
+
+
+# SchweizerpsaIm
+
+Trittst im Morgenrot daher, seh’ ich dich im Strahlenmeer, dich du
+Hocherhabener, Herrlicher! Wenn der Alpen Firn sich rötet, betet, freie
+Schweizer, betet! : Eure fromme Seele ahnt :: Gott im hehren Vaterland. :
+
+Kommst im Alpenglüh’n daher, find’ ich dich im Sternenheer, dich, du
+Menschenfreundlicher, Liebender! In des Himmels lichten Räumen kann ich
+froh und selig träumen; denn die fromme Seele ahnt Gott im hehren
+Vaterland.
+
+Ziehst im Nebelflor daher, such’ ich dich im Wolkenmeer, dich, du
+Unergründlicher, Ewiger! Aus dem grauen Luftgebilde tritt die Sonne klar
+und milde, und die fromme Seele ahnt Gott im hehren Vaterland.
+
+Fährst im wilden Sturm daher, bist du selbst uns Hort und Wehr, du
+allmächtig Waltender! Rettender! In Gewitternacht und Grauen lasst uns
+kindlich ihm vertrauen! Ja, die fromme Seele ahnt Gott im hehren Vaterland.
+
+
+# Die Bude meiner Fuchsenzeit
+
+Und sollt’ ich einst auf Schlössern wohnen, ein Radscha sein in Hindustan,
+und über allen Völkern thronen, die ganze Welt mir untertan; ein Mensch, an
+Reichtum unermessen, dass sich um mich gehäuft der Neid − : Ich werd’ die
+Bude nie vergessen, die Bude meiner Fuchsenzeit. :
+
+Ob die Tapete auch zerrissen, die Diele nicht mehr farbenfrisch; die Decke
+grau und arg zerschlissen, ich hatt’ ein Bett, ich hatt’ ein’ Tisch. Ich hatt’ zwei
+Fenster, die weit offen dem Licht sich dehnten und dem Tag, wenn einst die
+Sonne sie getroffen und ich in letzten Träumen lag.
+
+Dann rasch ein Recken und den Schädel ins Wasser, wenn er kneipenschwer.
+Um zehn Uhr wartete mein Mädel, doch ein Kolleg lief nebenher. Um eins
+war Pauken, dass die Hiebe selbst sässen wenn’s im Ernst so weit, − so
+zwischen Trunk und Traum und Liebe verbracht ich meine Fuchsenzeit.
+
+Und immer mit mir meine Bude, ob Morgen war und Abend kam; ob eine
+Ella, Lotte, Trude mich liebte oder Abschied nahm. Sie bleibt das
+Wunschschloss meiner Träume, in ihr spann ich mir meine Welt, verlor ich
+mich in Märchenträume, wie ich sie vor mein Ziel gestellt.
+
+Drum, sollt’ ich einst auf Schlössern wohnen, ein Radscha sein in Hindustan,
+und über allen Völkern thronen, die ganze Welt mir untertan; ein Mensch an
+Reichtum unermessen, dass sich um mich gehäuft der Neid − Ich werd’ die
+Bude nie vergessen, das Heim holdsel’ger Fuchsenzeit!
+
+
+# Die Ritter von der Gemütlichkeit
+
+Und wenn sich der Schwarm verlaufen hat um mitternächtige Stunde, dann
+findet unter den Edleren statt eine würdige Tafelrunde, : es sind erhaben ob
+Raum und Zeit die Ritter von der Gemütlichkeit. :
+
+Und wie der Zapfen vom Fasse springt, so springt der Deckel vom Herzen,
+und was sich drinnen bewegt, das klingt in lustigen Liedern und Scherzen. Es
+sind dem freien Wort geweiht die Ritter von der Gemütlichkeit.
+
+Wenn einem trocken die Kehle ward und er durstig lechzt nach dem Nassen,
+so ist es dieser Ritter Art, dass sie ihn nicht sterben lassen. Es sind dem
+Wohle der Menschen geweiht die Ritter von der Gemütlichkeit.
+
+Und wenn sich etliche Toren gar in traurigem Irrtum bekannten zu jener
+beklagenswerten Schar der Sekte der Flagellanten, − denen setzen zurecht
+den Kopf beizeit’ die Ritter von der Gemütlichkeit.
+
+Drum lebe hoch das freie Wort, das frisch von den Lippen rinne! Drum lebe,
+wem nicht die Kehle verdorrt, und wer nicht verachtet die Minne! Drum
+leben, erhaben ob Raum und Zeit, die Ritter von der Gemütlichkeit.
+
+
+# Tempora mutantur
+
+Viel volle Becher klangen, viel helle Stimmen sangen : vor uns in diesem
+Raum. : Doch Klang und Sang verhallten, verweht sind die Gestalten, : und
+alles war ein Traum! :
+
+Noch klingen Lied und Becher, doch sitzen andre Zecher, wir selbst in
+diesem Raum, und lassen’s uns behagen nach gut’ und bösen Tagen, doch
+alles ist ein Traum.
+
+Nicht lang, so füllen wieder bei Becherklang und Lieder ganz andre diesen
+Raum, und treiben, was wir trieben, und singen, trinken, lieben, bis alles wird
+ein Traum.
+
+
+# Landsknechtlied
+
+Vom Barette schwankt die Feder, biegt und wiegt im Winde sich. Unser
+Wams von Büffelleder ist zerfetzt von Hieb und Stich. : Ja, von Stich und
+Hieb und ein Lieb muss ein, muss ein Landsknecht haben. :
+
+Unsre Linke an dem Schwerte, in der Rechten einen Spiess, kämpfen wir,
+soweit die Erde, bald für das und bald für dies. Ja, für dies und das, Suff und
+Frass muss ein, muss ein Landsknecht haben.
+
+Ruhm und Beute zu gewinnen, zieh’n wir mutig in die Schlacht. Einmal
+müssen wir von hinnen, hurtig drum bei Tag und Nacht. Ja, bei Nacht und
+Tag, was er mag, muss ein, muss ein Landsknecht haben.
+
+Landsknechtleben, lustig Leben, in der Schenke heijuhei! Hockt ein fader
+Kerl daneben, Ali Pascha, steh ihm bei! Ja, so schmeisst ihn raus, reines Haus
+muss ein, muss ein Landsknecht haben!
+
+Sollte ich einst liegen bleiben in der bluterfüllten Schlacht, sollt ihr mir ein
+Kreuzlein schmieden auf den tiefen, dunklen Schacht! Ja, mit Trommeln viel
+und Pfeifenspiel sollt ihr, sollt ihr mich begraben.
+
+
+# Gesellschaftslied
+
+Vom hoh’n Olymp herab ward uns die Freude, ward uns der Jugend Traum
+beschert; drum, traute Brüder, trotzt dem blassen Neide, der unsre
+Jugendfreuden stört! Feierlich schalle der Jubelgesang schwärmender Brüder
+beim Becherklang! Ja, feierlich schalle der Jubelgesang schwärmender
+Brüder beim Becherklang!
+
+Versenkt ins Meer der jugendlichen Wonne lacht uns der Freuden hohe Zahl,
+bis einst am späten Abend uns die Sonne nicht mehr entzückt mit ihrem
+Strahl. Feierlich schalle usw.
+
+So lang es Gott gefällt, ihr lieben Brüder, woll’n wir uns dieses Lebens freu’n
+und, fällt der Vorhang einst dann uns hernieder, vergnügt uns zu den Vätern
+reih’n. Feierlich schalle usw.
+
+Herr Bruder, trink aufs Wohlsein deiner Schönen, die deiner Jugend Traum
+belebt! Lass ihr zu Ehr’ ein flottes Hoch ertönen, dass ihr’s durch jede Nerve
+bebt! Feierlich schalle usw.
+
+Ist einer unsrer Brüder dann geschieden, vom blassen Tod gefordert ab, so
+weinen wir und wünschen Ruh’ und Frieden in unsres Bruders kühles Grab.
+Weinet und wünschet Ruhe hinab in unsres Bruders kühles Grab!
+
+
+# Die Lore am Tore
+
+Von allen den Mädchen so blink und blank gefällt mir am besten die Lore;
+von allen den Winkeln und Gässchen der Stadt gefällt mir der Winkel am
+Tore. Der Meister, der schmunzelt, als hab’ er Verdacht, als hab’ er Verdacht
+auf die Lore; sie ist mein Gedanke bei Tag und bei Nacht und wohnet im
+Winkel am Tore.
+
+Und kommt sie getrippelt das Gässchen hinab, so wird mir ganz schwül vor
+den Augen; und hör’ ich von weitem ihr leises Klipp Klapp, kein Niet oder
+Band will mir taugen. Die Damen bei Hofe, so sehr sie sich zier’n, sie
+gleichen doch nicht meiner Lore; sie ist mein Gedanke bei Tag und bei Nacht
+und wohnet im Winkel am Tore.
+
+Und kommet die liebe Weihnacht heran, und strotzt mir das Geld in der
+Westen; das Geld, das die Mutter zum Rock mir gesandt, ich geb’s ihr, bei ihr
+ist’s am besten; und würden mir Schätze vom Teufel gebracht, ich trüge sie
+alle zur Lore; sie ist mein Gedanke bei Tag und bei Nacht und wohnet im
+Winkel am Tore.
+
+Und kommet nun endlich auch Pfingsten heran, nach Handwerksgebrauch
+müsst’ ich wandern; dann werd’ ich jedoch für mein eigenes Geld hier Bürger
+und Meister trotz andern; dann werde ich Meister in dieser Stadt, Frau
+Meisterin wird meine Lore; dann geht es juchheissa! bei Tag und bei Nacht,
+doch nicht mehr im Winkel am Tore.
+
+
+# Lili Marleen
+
+Vor der Kaserne vor dem grossen Tor, stand eine Laterne, steht sie noch
+davor. Da wollen wir uns wiedersehn, bei der Laterne woll’n wir stehn, wie
+einst Lili Marleen.
+
+Unser beider Schatten sah wie einer aus, dass wir lieb uns hatten, sah man
+gleich daraus. Und alle Leute soll’n es sehn, wenn wir bei der Laterne stehn,
+wie einst Lili Marleen.
+
+Schon rief der Posten, sie blasen Zapfenstreich, es kann drei Tage kosten,
+Kamerad ich komm ja gleich. Da sagen wir auf Wiedersehn, wie gerne wollt’
+ich mit dir gehn, mit dir Lili Marleen.
+
+Deine Schritte kennt sie, deinen zieren Gang, alle Abend brennt sie, mich
+vergisst sie lang. Und sollte mir ein Leid geschehn, wer wird bei der Laterne
+stehn, wie einst Lili Marleen.
+
+Aus der stillen Kammer, aus der Erden Grund, hebt sich wie in Träumen,
+dein verliebter Mund. Wenn sich die späten Nebel drehn, wer wird bei der
+Laterne stehn, wie einst Lili Marleen.
+
+
+# Heute ist heut
+
+Was die Welt morgen bringt, ob sie uns Sorgen bringt, Leid oder Freud?
+Komme was kommen mag, Sonnenschein Wetterschlag, : morgen ist auch ein
+Tag, heute ist heut! :
+
+Wenn’s dem Geschick gefällt, sind wir in alle Welt morgen zerstreut! Drum
+lasst uns lustig sein! Wirt roll das Fass herein! Mädel, schenk ein, schenk ein!
+Heute ist heut!
+
+Ob ihren Rosenmund morgen schön Hildegund anderen beut − darnach ich
+nimmer frag, das schafft mir keine Plag, wenn sie mich heut nur mag − heute
+ist heut!
+
+Klingklang, stosst an und singt! Morgen vielleicht erklingt Sterbegeläut! Wer
+weiss, ob nicht die Welt morgen in Schutt zerfällt! Wenn sie nur heut noch
+hält! Heute ist heut!
+
+Was die Welt morgen bringt
+
+
+# Der Wildschütz
+
+Was schleicht dort im nächtlichen Walde, so einsam und wildernd umher, und
+hält in seiner Rechten, so krampfhaft fest das Gewehr?
+
+Da tritt aus dem nächtlichen Walde ein grosser Hirsch hervor, er äugt nach
+allen Seiten, hebt stolz sein Geweih empor.
+
+«Halt Schurke, die Büchse herunter», so tönt es von drüben her, «dich
+Wildschütz, dich such ich schon lange, von der Stelle kommst du mir nicht
+mehr!»
+
+Der Wildschütz, der zögert nicht lange, er kennt seine sichere Hand, ein
+Schuss, und ein Aufschrei von drüben, und der Förster liegt sterbend im
+Sand.
+
+Er drückte dem sterbenden Förster die brechenden Augen zu, und sprach
+dazu leise die Worte: «Gott schenke dir ewige Ruh.»
+
+«Du bist ja im Zweikampf gefallen, da hiess es nur du oder ich, du hast deine
+Pflicht treu erfüllet, das Wildern das lasse ich nicht.»
+
+Er stellt sich im Ort den Gendarmen, gepeinigt von Reue und Not, «nun
+schenk mir Gott sein Erbarmen, ich schoss ja den Förster tot.»
+
+
+# Turnerlied
+
+Was ziehet so munter das Tal entlang? Eine Schar in weissem Gewand; wie
+mutig brauset der volle Gesang, die Töne sind mir bekannt. Sie singen von
+Freiheit und Vaterland, ich kenne die Scharen im weissen Gewand: : Hurra,
+hurra, hurra, : du fröhliche Turnerschar!
+
+Die Turner ziehen ins grüne Feld hinaus zur männlichen Lust, dass Übung
+kräftig die Glieder stählt, mit Mut sich füllet die Brust. Drum schreiten die
+Turner das Tal entlang, drum tönt ihr mutiger, froher Gesang: Hurra usw.
+
+Es ist kein Graben zu tief, zu breit, hinüber mit flüchtigem Fuss! Und trennt
+die Ufer der Strom so weit, hinein in den tosenden Fluss! Er teilt mit den
+Armen der Fluten Gewalt und aus den Wogen der Ruf noch schallt: Hurra
+usw.
+
+So wirbt der Turner um Kraft und Mut mit Frührots freundlichem Strahl, bis
+spät sich senkt der Sonne Glut und Nacht sich bettet im Tal. Und klingt der
+Abendglocken Klang, dann zieh’n wir nach Hause mit fröhlichem Sang:
+Hurra usw.
+
+
+# Weg mit den Grillen und Sorgen
+
+Weg mit den Grillen und Sorgen, Brüder es lacht ja der Morgen uns in der
+Jugend so schön! : Lasst uns die Becher bekränzen, lasst bei Gesängen und
+Tänzen uns durch die Pilgerwelt gehn, bis uns Zypressen umwehn! :
+
+Flüchtig verrinnen die Jahre; schnell von der Wiege zur Bahre trägt uns der
+Fittich der Zeit. : Noch sind die Tage der Rosen; schmeichelnde Lüfte
+umkosen Busen und Wangen uns heut: Brüder, geniesset die Zeit!. :
+
+Fröhlich zu wallen durchs Leben, trinken vom Safte der Reben, heisst uns der
+Wille des Herrn. : Auf denn, ihr fröhlichen Zecher, singt seine Güte beim
+Becher! Fröhliche sieht er so gern. Preiset den gütigen Herrn! :
+
+Sehet, in Osten und Westen keltert man Trauben zu Festen: Gott gab zur
+Freude den Wein! : Gott schuf die Mädchen zur Liebe, pflanzte die seligsten
+Triebe, tief in den Busen uns ein. Liebet, und trinket den Wein! :
+
+Dräut euch ein Wölkchen von Sorgen, scheucht es durch Hoffnung bis
+morgen! Hoffnung macht alles uns leicht. : Hoffnung, du sollst uns im Leben
+liebend und tröstend umschweben, und wenn Freund Hein uns beschleicht,
+mache den Abschied uns leicht! :
+
+
+# Berchtoldstag-Cantus der SAT Engadin
+
+Wenn dich schwer die Sorgen drücken, nächtelang der Schlaf entflieht. Wenn
+die Jahre leicht dich bücken und du graue Haare kriegst. Gehe hin am
+Berchtoldstage zu der trauten SAT, die dir nimmt die Sorg’ und Plage, Trauer,
+Tränen, Schmerz und Weh. : Sing den Cantus der Semester, sing’ die alten
+Weisen du! dann wird Herz und Seele fester und die Sorg’ lässt dich in Ruh’.
+Füll’ noch einmal deinen Becher, leer ihn aus in einem Mal. Denk’ zurück
+wie einst als Zecher du dies tatest ohne Qual! :
+
+Schleicht sich dann die letzte Stunde, heimlich in Dein Herz hinein. Wenn
+vergebens lechzt dein Munde nach dem edlen Tropfen Wein. Danke Gott für
+Glück und Freuden, die viel Jahre er dir gab, dass du singen konnst mit
+Freunden bis zum letzten Lebenstag. Sing den Cantus usw.
+
+
+# Viel Durst
+
+Wenn ich einmal der Herrgott wär’, mein erstes wäre das: Ich nähme meine
+Allmacht her und schüf’ ein grosses Fass, ein Fass, so gross als wie die Welt,
+ein Meer göss’ ich hinein, : von einem Belt zum andern Belt von
+Rüdesheimer Wein. :
+
+Wenn ich einmal der Herrgott wär’, mein zweites wäre das: Ich nähme meine
+Allmacht her und schüf’ ein grosses Glas, ein Glas, so hoch als wie der Mond
+und wie die Erde rund, dass auch des Trinkens sich’s verlohnt, setz’ ich es an
+den Mund.
+
+Wenn ich einmal der Herrgott wär’, mein drittes wäre das: Ich nähme meine
+Allmacht her, tränk’ täglich so ein Mass. O welche Wonne wäre nun in einem
+solchen Zug und Druck, da könnt’ man sich doch gütlich tun an einem
+tücht’gen Schluck.
+
+Und hätt’ ich nach so manchem Tag das Fass so rein gefegt, dass sich bei
+noch so derbem Schlag kein Tröpfchen mehr drin regt, dann würf’ ich auf die
+Knie mich hin und fing laut an zu schrei’n: «Lass mich, o Gott, ich bitte dich,
+noch einmal Herrgott sein!»
+
+
+# Abschied
+
+Wenn wir marschieren, zieh’n wir zum Schwabentor hinaus, schwarzbraunes
+Mädel, du bleibst zu Haus. Darum sing, mein liebes Mädel, sing, sing, sing,
+unter einer grünen L’ialind sitzt ein kleiner Vogel Fink. Sing, mein liebes
+Mädel, sing!
+
+Der Wirt muss borgen, er darf nicht rappelköpfisch sein, sonst kehren wir
+morgen beim andern ein. Darum sing usw.
+
+Weg mit den Sorgen, weg mit der Widerwärtigkeit, morgen ist morgen, heute
+ist heut. Darum sing usw.
+
+Heute ist heute, morgen da heiraten wir; schwarzbraunes Mädel, du bleibst
+bei mir. Darum sing usw.
+
+Wenn wir heimkehren, zieh’n wir zum Schwabentor herein; schwarzbraunes
+Mädel, dann wirst du mein! Darum sing usw.
+
+
+# Die drei Dörfer
+
+Wer reit’t mit zwanzig Knappen ein zu Heidelberg im Hirschen? Das ist der
+Herr von Rodenstein, : auf Rheinwein will er pirschen. :
+
+«Hollahe! Den Hahn ins Fass! schenk ein! Ich fürcht’, die Kehlen rosten; wir
+wöll’n ein Jahr lang lustig sein, und sollt’s ein Dorf auch kosten.
+
+Ein Dorf, was ist’s? Nur Mist und Rauch! Ich hab ja ihrer dreie: Gersprenz
+und Pfaffenbeerfurt auch und Reichelsheim, das treue.»
+
+Trompeten klangen mit Schalmei’n und Pauken um die Wette, zwölf Monden
+sass der Rodenstein beim fürstlichen Bankette.
+
+Und als er sich nach Jahr und Tag die Rechnung hergewunken, da sprach er:
+«Blitz und Donnerschlag! Jetzt ist Gersprenz vertrunken, ist hin, ist hin,
+Gersprenz ist fort, ist fort, Gersprenz, der fromme, der züchtige Ort,
+Gersprenz ist veritrunken!
+
+Hollahe! Doch wie man’s treibt, so geht’s! Was liegt an dem Verluste? Man
+spricht vom vielen Trinken stets, doch nie vom vielen Durste.»
+
+
+# Wie glüht er im Glase
+
+Wie glüht er im Glase! Wie flammt er so hold! Geschliff’nem Topase
+vergleich’ ich sein Gold! Und Düfte entschweben ihm blumig und fein. : Gott
+schütze die Reben am sonnigen Rhein! :
+
+Durchbraust uns ein Feuer, so schmilzt unser Sinn für euch nur getreuer, ihr
+Mägdlein, dahin. Wir schwärmen von Kosen, von Minnen und Frei’n. Gott
+schütze die Rosen am sonnigen Rhein!
+
+Ob oft auch der Tropfen den Zecher bezwingt, Herzdrücken und -klopfen die
+Schönheit uns bringt; wir wollen’s vergeben, vergessen, verzeih’n, den Rosen
+und Reben am sonnigen Rhein!
+
+
+# Badenerlied der alten Alemannen
+
+Wir bleiben stets die alten, ja die alten Alemannen; obgleich der Jahre viele
+und emsig uns verrannen, so finden wir uns jährlich doch in der Bäderstadt,
+und keiner bleibt zu Hause, : der noch zwei Beine hat. : Trarum, traram,
+trara! Jetzt sind wir wieder da! Und keiner bleibt zu Hause, der noch zwei
+Beine hat.
+
+Die einen sind gestorben und sind von uns geschieden, und zechen wohl auf
+dem Olymp im Schatten des Kroniden. Wir aber trinken jährlich Wein von
+der gold’nen Wand, und reichen uns in Treue die alte Freundeshand. Trarum
+usw.
+
+Die Schläger sind verklungen und ruhen nun verrostet, und was das lange
+Leben bot, das haben wir gekostet. Doch alle Jahre wieder sieht man die
+schwarze Schar am Limmatstrande zechen; wie glänzt das Silberhaar!
+Trarum usw.
+
+Und schlägt auch mir die Stunde, der Stunden allerletzte, und bleibt der Stuhl
+in Baden leer, auf den ich mich einst setzte, so kann ich doch nicht fehlen im
+trauten Freundeskreis. Urlaub vom Göttervater bekommt der Naseweis.
+Trarum usw.
+
+So lasset uns denn zechen und uns der Stunde freuen, und keinen einz’gen
+grossen Rausch im Leben je bereuen. Drum hebet hoch die Gläser, und
+stosset kräftig an und singt das Lied vom treuen, uralten Alemann. Trarum,
+traram, trara! Jetzt sind wir wieder da! Hoch klingt das Lied vom treuen,
+uralten Alemann!
+
+
+# Wir lugen hinaus
+
+Wir lugen hinaus in die sonnige Welt allzeit mit lachenden Augen; des
+fahrenden Volkes durstigen Schlag mag Frohes und Freies nur taugen. Wir
+wandern und singen, und naht uns das Glück, so packen wir’s hurtig beim
+Kragen, : und trinken den Wein und küssen die Maid und lassen den Eulen
+das Klagen. :
+
+Die Schriften der Alten studierten wir gut: sie haben ins Schwarze getroffen,
+Anakreon und Horatius, die grössten der Philosophen. Drum, Alter, lass ab
+von scheltendem Tun und denke der Söhne, der lieben, und denke der Zeit,
+wo du voreinst vielleicht es noch ärger getrieben!
+
+Ein Weilchen nur währt ’s, sind Saus und Braus vom Strudel des Lebens
+verschlungen, die tobenden Wogen der Jugendlust, die himmelan jauchzend
+gesprungen. Philister heisst man, und alles ist aus; und die am tollsten
+gewettert, sind still und stumm, die Lieder vertönt, die Becher der Freude
+zerschmettert.
+
+Drum heissa, hallo und dreingehaut! Zum Teufel mit Kummer und Sorgen!
+Lasst kreisen das Horn, bis Hahnenschrei verkündet den kommenden
+Morgen. Zum Trübsalblasen kommen wir noch, wallt Blondhaar silbern dem
+Greise: Es lebe die selige Jugendzeit, Holdlieb und die launige Weise!
+
+
+# Die Hannelore
+
+Wir sind Soldaten, ja Soldaten und wir suchen uns Quartier, liebe Hannelore,
+heute abend bleiben wir ja hier; keiner weiss für wie manchen Tag. : Hast du
+mir nicht ein Zimmer? Auf dem Stroh schläft ein Hauptmann ja nimmer,
+denn dort ist’s ja nicht so wunderbar. :
+
+Da sprach die Hannelore: Lieber Hauptmann, Zimmer hab ich nicht; aber
+wenn er hübsch und brav mit meiner Mutter drüber spricht, kriegt er doch
+vielleicht bei uns Quartier. Ich hab ja nur mein Zimmer, doch dies eine
+vermiete ich nimmer, es gehört ja nur mir ganz allein.
+
+Und als der Hauptmann andern Tags zu seinen Offizieren kam, sprach er:
+Hier zu bleiben scheint mir mehr als wunderwundersam, allerwenigstens
+vierzehn Tag. Ach wohnt’ ich doch nur immer neben Hannelorens reizendem
+Zimmer, denn dort träumt man ja so wunderbar.
+
+Und als nach vierzehn Tagen die Soldaten wieder heimwärts zieh’n, jedem
+dieser Dienst am leichtesten zu sein gewesen schien, denn der Hauptmann
+träumt den ganzen Tag von Hannelorens Zimmer; auf dem Stroh schläft ein
+Hauptmann ja nimmer, denn dort ist’s ja nicht so wunderbar.
+
+Und als dreihundertfünfundsechzigmal ein Tag vergangen war, sprach die
+junge Hauptmannsfrau: Die Konsequenzen sind mir klar; heute schaffen wir
+ein Wieglein an. Das wünscht’ ich mir schon immer, eine eig’ne kleine Wiege
+im Zimmer und ein Bübchen drin mit Lockenhaar.
+
+
+# Wanderlied
+
+Wohlauf, die Luft geht frisch und rein, wer lange sitzt, muss rosten; den
+allersonnigsten Sonnenschein lässt uns der Himmel kosten. Jetzt reicht mir
+Stab und Ordenskleid der fahrenden Scholaren, ich will zu guter Sommerzeit
+ins Land der Franken fahren! : Valleri, vallera, : ins Land der Franken fahren!
+
+Der Wald steht grün, die Jagd geht gut, schwer ist das Korn geraten; sie
+können auf des Maines Flut die Schiffe kaum verladen. Bald hebt sich auch
+das Herbsten an, die Kelter harrt des Weines; der Winzer Schutzherr Kilian
+beschert uns etwas Feines. Valleri usw.
+
+Wallfahrer ziehen durch das Tal mit fliegenden Standarten, hell grüsst ihr
+doppelter Choral den weiten Gottesgarten. Wie gerne wär’ ich mitgewallt, ihr
+Pfarr’ wollt’ mich nicht haben! So muss ich seitwärts durch den Wald als
+räudig Schäflein traben. Valleri usw.
+
+Zum heil’gen Veit von Staffelstein komm’ ich emporgestiegen und seh’ die
+Lande um den Main zu meinen Füssen liegen. Von Bamberg bis zum
+Grabfeldgau umrahmen Berg und Hügel die breite, stromdurchglänzte Au,
+ich wollt’, mir wüchsen Flügel! Valleri usw.
+
+Einsiedelmann ist nicht zu Haus, dieweil es Zeit zu mähen; ich seh’ ihn an
+der Halde drauss’ bei einer Schnitt’rin stehen. Verfahr’ner Schüler Stossgebet
+heisst: «Herr, gib uns zu trinken!» Doch wer bei schöner Schnitt’rin steht,
+dem mag man lange winken. Valleri usw.
+
+Eindsiedel, das war missgetan, dass du dich hubst von hinnen! Es liegt, ich
+seh’s dem Keller an, ein guter Jahrgang drinnen. Hoiho! die Pforten brech’
+ich ein und trinke, was ich finde. Du heiliger Veit von Staffelstein verzeih mir
+Durst und Sünde! Valleri usw.
+
+
+# Reiterlied
+
+Wohlauf, Kameraden, aufs Pferd, aufs Pferd! ins Feld, in die Freiheit
+gezogen! Im Felde, da ist der Mann noch was wert, da wird das Herz noch
+gewogen, : da tritt kein andrer für ihn ein, auf sich selber steht er da ganz
+allein. :
+
+Aus der Welt die Freiheit verschwunden ist, man sieht nur Herren und
+Knechte, die Falschheit herrschet, die Hinterlist bei dem feigen
+Menschengeschlechte; der dem Tod ins Angesicht schauen kann, der Soldat
+allein ist der freie Mann.
+
+Des Lebens Ängsten, er wirft sie weg, hat nicht mehr zu fürchten, zu sorgen;
+er reitet dem Schicksal entgegen keck, trifft’s heute nicht, trifft es doch
+morgen; und trifft es morgen, so lasset uns heut noch schlürfen die Neige der
+köstlichen Zeit!
+
+Von dem Himmel fällt ihm sein lustig Los, braucht’s nicht mit Müh’ zu
+erstreben; der Fröner, der sucht in der Erde Schoss, da meint er den Schatz zu
+erheben; er gräbt und schaufelt, so lang er lebt, und gräbt, bis er endlich sein
+Grab sich gräbt.
+
+Der Reiter und sein geschwindes Ross, sie sind gefürchtete Gäste; es
+flimmern die Lampen im Hochzeitsschloss, ungeladen kommt er zum Feste.
+Er wirbt nicht lang, er zeiget nicht Gold, im Sturm erringt er den Minnesold.
+
+Warum weinet die Dirn’ und zergrämet sich schier? Lasst fahren dahin, lasst
+fahren! Er hat auf Erden kein bleibend Quartier, kann treue Lieb’ nicht
+bewahren. Das rasche Schicksal, es treibt ihn fort, seine Ruh’ lässt er an
+keinem Ort.
+
+Auf des Degens Spitze die Welt jetzt liegt, drum froh, wer den Degen jetzt
+führet, und bleibet nur wacker zusammengefügt, ihr zwingt das Glück und
+regieret. Es sitzt keine Krone so fest, so hoch, der mutige Springer erreicht
+sie doch.
+
+Drum frisch, Kameraden, den Rappen gezäumt, die Brust im Gefechte
+gelüftet! Die Jugend brauset, das Leben schäumt! Frisch auf! Eh der Geist
+noch verdüftet! Und setzt ihr nicht das Leben ein, nie wird euch das Leben
+gewonnen sein!
+
+
+# Kurfürst Friedrich
+
+Wütend wälzt’ sich einst im Bette Kurfürst Friedrich von der Pfalz; gegen
+alle Etikette brüllte er aus vollem Hals: : «Wie kam gestern ich ins Nest? Bin
+scheint’s wieder voll gewest!» :
+
+«Na, ein wenig schief geladen», grinste drauf der Kammermohr, «selbst von
+Mainz des Bischofs Gnaden kamen mir benebelt vor. S’war halt doch ein
+schönes Fest: Alles wieder voll gewest!»
+
+«So? Du findest das zum Lachen? Sklavenseele, lache nur! Künftig werd’
+ich’s anders machen, Hassan, höre meinen Schwur: ’s letzte Mal, bei Tod und
+Pest, war es, dass ich voll gewest!
+
+Will ein christlich Leben führen, ganz mich der Beschauung weih’n; um
+mein Tun zu kontrollieren, trag’ ich’s in ein Tagbuch ein; und ich hoff’, dass
+ihr nicht lest, dass ich wieder voll gewest!»
+
+Als der Kurfürst kam zu sterben, machte er sein Testament, und es fanden
+seine Erben auch ein Buch in Pergament. Drinnen stand auf jeder Seit’: Seid
+vernünftig, liebe Leut’, dieses geb’ ich zu Attest: Heute wieder voll gewest.
+
+Hieraus mag ein jeder sehen, was ein guter Vorsatz nützt, und wozu auch
+widerstehen, wenn der volle Becher blitzt? Drum stosst an! laProbatum est:
+Heute wieder voll gewest!
+
+
+`;
+
+        function parseSongs(markdown) {
+            const lines = markdown.split('\n');
+            const songs = [];
+            let appTitle = '';
+            let appContent = [];
+            let currentSong = null;
+            let currentContent = [];
+            let isFirstEntry = true;
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                
+                if (line.startsWith('# ') && line.length > 2) {
+                    if (currentSong) {
+                        songs.push({
+                            ...currentSong,
+                            content: currentContent.join('\n').trim()
+                        });
+                        currentContent = [];
+                    }
+                    
+                    const title = line.substring(2).trim();
+                    
+                    if (isFirstEntry && title) {
+                        appTitle = title;
+                        isFirstEntry = false;
+                    } else if (title) {
+                        currentSong = {
+                            id: songs.length,
+                            title: title
+                        };
+                    }
+                } else if (!currentSong && !isFirstEntry && line) {
+                    appContent.push(line);
+                } else if (currentSong) {
+                    currentContent.push(line);
+                }
+            }
+
+            if (currentSong) {
+                songs.push({
+                    ...currentSong,
+                    content: currentContent.join('\n').trim()
+                });
+            }
+
+            return { 
+                appTitle, 
+                appSubtitle: appContent.length > 0 ? appContent[0] : '',
+                appInfo: appContent.slice(1).join('\n').trim(),
+                songs 
+            };
+        }
+
+        function parseStanzas(content) {
+            const lines = content.split('\n');
+            const stanzas = [];
+            let currentStanza = [];
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                
+                if (line === '') {
+                    if (currentStanza.length > 0) {
+                        stanzas.push(currentStanza);
+                        currentStanza = [];
+                    }
+                } else {
+                    currentStanza.push(line);
+                }
+            }
+
+            if (currentStanza.length > 0) {
+                stanzas.push(currentStanza);
+            }
+
+            return stanzas;
+        }
+
+        function highlightText(text, query) {
+            if (!query) return text;
+            
+            const parts = text.split(new RegExp(`(${query})`, 'gi'));
+            return parts.map((part, i) => 
+                part.toLowerCase() === query.toLowerCase() 
+                    ? <mark key={i}>{part}</mark> 
+                    : part
+            );
+        }
+
+        function getPreviewText(content, query) {
+            if (!query) {
+                return content.substring(0, 100);
+            }
+            
+            const lowerContent = content.toLowerCase();
+            const lowerQuery = query.toLowerCase();
+            const index = lowerContent.indexOf(lowerQuery);
+            
+            if (index === -1) {
+                return content.substring(0, 100);
+            }
+            
+            const start = Math.max(0, index - 40);
+            const end = Math.min(content.length, index + query.length + 60);
+            const preview = content.substring(start, end);
+            
+            return (start > 0 ? '...' : '') + preview + (end < content.length ? '...' : '');
+        }
+
+        function useDoubleTap(callback, delay = 300) {
+            const lastTap = useRef(0);
+
+            const handleTap = (e) => {
+                const now = Date.now();
+                const timeSinceLastTap = now - lastTap.current;
+
+                if (timeSinceLastTap < delay && timeSinceLastTap > 0) {
+                    callback(e);
+                    lastTap.current = 0;
+                } else {
+                    lastTap.current = now;
+                }
+            };
+
+            return handleTap;
+        }
+
+        function App() {
+            const [data] = useState(() => parseSongs(SONGS_DATA));
+            const [selectedSong, setSelectedSong] = useState(null);
+            const [showInfo, setShowInfo] = useState(false);
+            const [searchQuery, setSearchQuery] = useState('');
+            const [fontSize, setFontSize] = useState(1);
+            const [flowMode, setFlowMode] = useState(false);
+            const [showModeIndicator, setShowModeIndicator] = useState(false);
+
+            const { appTitle, appSubtitle, appInfo, songs } = data;
+
+            useEffect(() => {
+                const saved = localStorage.getItem('sat-liederbuch-fontsize');
+                if (saved) {
+                    setFontSize(parseFloat(saved));
+                }
+            }, []);
+
+            useEffect(() => {
+                localStorage.setItem('sat-liederbuch-fontsize', fontSize.toString());
+                document.documentElement.style.setProperty('--font-scale', fontSize.toString());
+            }, [fontSize]);
+
+            const increaseFontSize = () => {
+                setFontSize(prev => Math.min(prev + 0.1, 2));
+            };
+
+            const decreaseFontSize = () => {
+                setFontSize(prev => Math.max(prev - 0.1, 0.7));
+            };
+
+            const toggleFlowMode = () => {
+                setFlowMode(prev => !prev);
+                setShowModeIndicator(true);
+                setTimeout(() => setShowModeIndicator(false), 800);
+            };
+
+            const handleDoubleTap = useDoubleTap(toggleFlowMode);
+
+            const filteredSongs = useMemo(() => {
+                if (!searchQuery.trim()) return songs;
+                
+                const query = searchQuery.toLowerCase();
+                return songs.filter(song => 
+                    song.title.toLowerCase().includes(query) ||
+                    song.content.toLowerCase().includes(query)
+                );
+            }, [songs, searchQuery]);
+
+            const formatSongContent = (content, isFlowMode) => {
+                const stanzas = parseStanzas(content);
+                
+                return stanzas.map((stanza, stanzaIdx) => (
+                    <div key={stanzaIdx} className="stanza">
+                        <div className="stanza-header">
+                            <span className="stanza-number">{stanzaIdx + 1}</span>
+                            <div className="stanza-line"></div>
+                        </div>
+                        <div className="stanza-text">
+                            {isFlowMode ? (
+                                <span className="text-line">
+                                    <span className="line-text">{stanza.join(' ')}</span>
+                                </span>
+                            ) : (
+                                stanza.map((line, lineIdx) => (
+                                    <span key={lineIdx} className="text-line">
+                                        <span className="line-text">{line}</span>
+                                        <span className="line-marker">•</span>
+                                        {lineIdx < stanza.length - 1 && ' '}
+                                    </span>
+                                ))
+                            )}
+                        </div>
+                    </div>
+                ));
+            };
+
+            if (showInfo) {
+                return (
+                    <div className="main-content song-detail">
+                        <div className="controls-bar">
+                            <button 
+                                className="back-button"
+                                onClick={() => setShowInfo(false)}
+                            >
+                                ← Zurück
+                            </button>
+                        </div>
+                        <div className="info-content">
+                            <h1>{appTitle}</h1>
+                            <p>{appSubtitle}</p>
+                            {appInfo && appInfo.split('\n').map((line, idx) => (
+                                <p key={idx}>{line}</p>
+                            ))}
+                        </div>
+                    </div>
+                );
+            }
+
+            if (selectedSong) {
+                return (
+                    <div className="main-content song-detail" onClick={handleDoubleTap}>
+                        <div className="controls-bar">
+                            <button 
+                                className="back-button"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setSelectedSong(null);
+                                }}
+                            >
+                                ← Zurück
+                            </button>
+                            <div className="zoom-controls">
+                                <button 
+                                    className="zoom-button"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        decreaseFontSize();
+                                    }}
+                                    disabled={fontSize <= 0.7}
+                                >
+                                    −
+                                </button>
+                                <span className="zoom-info">{Math.round(fontSize * 100)}%</span>
+                                <button 
+                                    className="zoom-button"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        increaseFontSize();
+                                    }}
+                                    disabled={fontSize >= 2}
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                        <div className={`song-content ${flowMode ? 'flow-mode' : ''}`}>
+                            <h1>{selectedSong.title}</h1>
+                            {formatSongContent(selectedSong.content, flowMode)}
+                        </div>
+                        {showModeIndicator && (
+                            <div className="mode-indicator">
+                                {flowMode ? 'Fliesstext' : 'Zeilenweise'}
+                            </div>
+                        )}
+                    </div>
+                );
+            }
+
+            return (
+                <>
+                    <header className="header">
+                        <h1 className="header-title" onClick={() => setShowInfo(true)}>
+                            {appTitle}
+                        </h1>
+                        <div className="search-container">
+                            <input
+                                type="text"
+                                className="search-input"
+                                placeholder="Durchsuche Titel und Text..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                autoComplete="off"
+                            />
+                            {searchQuery && (
+                                <div className="search-info">
+                                    Suche in Titel und Liedtext
+                                </div>
+                            )}
+                        </div>
+                    </header>
+                    <main className="main-content">
+                        {searchQuery && filteredSongs.length > 0 && (
+                            <div className="result-count">
+                                {filteredSongs.length} {filteredSongs.length === 1 ? 'Lied gefunden' : 'Lieder gefunden'}
+                            </div>
+                        )}
+                        {filteredSongs.length === 0 ? (
+                            <div className="empty-state">
+                                <div className="empty-state-icon">♪</div>
+                                <div className="empty-state-text">
+                                    {searchQuery 
+                                        ? `Keine Lieder mit "${searchQuery}" gefunden`
+                                        : 'Keine Lieder gefunden'
+                                    }
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="song-list">
+                                {filteredSongs.map(song => {
+                                    const preview = getPreviewText(song.content, searchQuery);
+                                    const titleMatch = song.title.toLowerCase().includes(searchQuery.toLowerCase());
+                                    
+                                    return (
+                                        <div
+                                            key={song.id}
+                                            className="song-item"
+                                            onClick={() => setSelectedSong(song)}
+                                        >
+                                            <div className="song-title">
+                                                {searchQuery && titleMatch
+                                                    ? highlightText(song.title, searchQuery)
+                                                    : song.title
+                                                }
+                                            </div>
+                                            {searchQuery && !titleMatch && (
+                                                <div className="song-preview">
+                                                    {highlightText(preview, searchQuery)}
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
+                    </main>
+                </>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
