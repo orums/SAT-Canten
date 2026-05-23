@@ -21,7 +21,7 @@ Aus verschiedenen Quellen sind Studentenlieder in dieser App zusammengeführt:
 
 ### License
 
-Copyright (c) 2025.
+Copyright (c) 2025–2026.
 
-This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. 
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
 You are free to share and adapt this work for non-commercial purposes, provided you give appropriate credit.
