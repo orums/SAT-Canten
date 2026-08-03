@@ -1,6 +1,6 @@
 // Service Worker für Cantusprügel der SAT
 // Cache-Version ist an die App-Version gebunden — bei Update wird alter Cache gelöscht
-const CACHE_NAME = 'canten-v10.6';
+const CACHE_NAME = 'canten-v10.8';
 const URLS_TO_CACHE = [
     '/SAT-Canten/',
     '/SAT-Canten/index.html',
