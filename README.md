@@ -1,27 +1,46 @@
 ## SATer-Cantusprügel
 
-Aus verschiedenen Quellen sind Studentenlieder in dieser App zusammengeführt:
+In dieser Web-App sind Studentenlieder aus verschiedenen Quellen zusammengeführt:
 
 - Cantusprügel der SAT 1962
 - Cantusprügel der SAT 2010
-- HarWälBus Liedersammlung - Band 1
-- HarWälBus Dustere Gesänge - Band 3
+- HarWälBus Liedersammlung – Band 1
+- HarWälBus Dustere Gesänge – Band 3
+- Basler Kommersbuch
 
 ### Funktionen
 
-* **Single-File-Anwendung**: Alle Lieder, Regeln und Styles sind in einer einzigen `index.html`-Datei enthalten. Es wird kein Webserver benötigt – die Datei einfach im Browser öffnen.
-* **Datenschutz**: Alle Einstellungen werden lokal im Browser gespeichert. Es werden keine Daten gesammelt oder an externe Computer übertragen.
-* **Volltextsuche**: Lieder lassen sich schnell nach Titel oder Liedtext durchsuchen und gemäss eigenen Vorlieben in drei Gruppen einteilen.
-* **Hell- & Dunkelmodus**: Umschalten zwischen heller und dunkler Benutzeroberfläche. Die Farbkontraste sind barrierefrei und nach WCAG 2.1 geprüft.
-* **Biercomment Al!**: Dieser ist zur Förderung prinzipieller Diskussionen integriert.
-* **Responsives Design**: Funktioniert sowohl auf Mobiltelefonen als auch auf Desktop-Browsern zuverlässig.
-* **HarWälBus Band 3**: Diese Lieder sind nur bei passenden Gelegenheiten zu singen und deshalb nur für Eingeweihte zugänglich.
+- **Eigenständige Web-App:** Lieder, Biercomment, Anleitung, Schriften, Symbole, Styles und Programmlogik sind vollständig in der `index.html` enthalten.
+- **Offline-Nutzung:** Nach dem ersten erfolgreichen Online-Aufruf speichert ein Service Worker die Live-App im Browser. Danach kann sie – solange der Browser die Websitedaten nicht entfernt – auch ohne Internetverbindung geöffnet werden.
+- **Volltextsuche:** Lieder können nach Titel und Liedtext durchsucht werden.
+- **Persönliche Liedauswahl:** Lieder lassen sich nach eigenen Vorlieben ordnen und in Gruppen einteilen. Die Einstellungen bleiben lokal auf dem Gerät gespeichert.
+- **Mitsingen und Teilen:** Einzelne Lieder können zeitlich begrenzt zum gemeinsamen Mitsingen geteilt werden.
+- **Darstellung:** Helles und dunkles Farbschema sowie anpassbare Schriftgrößen erleichtern die Verwendung auf unterschiedlichen Geräten.
+- **Smartphone und Desktop:** Die Oberfläche ist für Mobiltelefone, Tablets und Desktop-Browser ausgelegt.
+- **Biercomment:** Der Biercomment ist direkt in die Anwendung integriert.
+- **Anleitung und Versionshinweise:** Bedienungshinweise und Änderungen einer neuen Version werden innerhalb der App angezeigt.
+- **Geschützte Lieder:** Die Lieder aus HarWälBus Band 3 sind verschlüsselt und nur für Eingeweihte zugänglich.
+- **Datenschutz:** Es werden keine Nutzungsdaten gesammelt oder an externe Dienste übertragen. Persönliche Einstellungen bleiben im Browser.
 
+### Veröffentlichte Dateien
 
+Auf GitHub Pages werden ausschließlich die für den Betrieb erforderlichen Dateien veröffentlicht:
 
-### License
+- `index.html` – aktuelle Live-Version der vollständigen Web-App
+- `preview/index.html` – Online-Testversion für den Entwickler
+- `service-worker.js` – speichert ausschließlich die Live-App für die Offline-Nutzung und verwaltet den Versionscache
+- `README.md` – Beschreibung des Projekts
+
+Programme, Vorlagen, unverschlüsselte Rohdaten und Entwicklungsdateien werden nicht über GitHub Pages veröffentlicht.
+
+Die Preview-Version wird nicht durch den Service Worker gespeichert und beeinflusst den Offline-Cache der Live-Anwender nicht.
+
+### Offline-Hinweis
+
+Die App muss mindestens einmal mit bestehender Internetverbindung geöffnet werden, damit `service-worker.js` installiert und die Live-Version gespeichert werden kann. Wird der Browser-Cache beziehungsweise werden die Websitedaten gelöscht, ist für die erneute Einrichtung wieder eine Internetverbindung erforderlich.
+
+### Lizenz
 
 Copyright (c) 2025–2026.
 
-This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
-You are free to share and adapt this work for non-commercial purposes, provided you give appropriate credit.
+Dieses Werk steht unter der Creative-Commons-Lizenz Namensnennung – Nicht kommerziell 4.0 International. Es darf für nicht kommerzielle Zwecke geteilt und bearbeitet werden, sofern eine angemessene Namensnennung erfolgt.
