@@ -19,7 +19,6 @@ In dieser Web-App sind Studentenlieder aus verschiedenen Quellen zusammengeführ
 - **Smartphone und Desktop:** Die Oberfläche ist für Mobiltelefone, Tablets und Desktop-Browser ausgelegt.
 - **Biercomment:** Der Biercomment ist direkt in die Anwendung integriert.
 - **Anleitung und Versionshinweise:** Bedienungshinweise und Änderungen einer neuen Version werden innerhalb der App angezeigt.
-- **Geschützte Lieder:** Die Lieder aus HarWälBus Band 3 sind verschlüsselt und nur für Eingeweihte zugänglich.
 - **Datenschutz:** Es werden keine Nutzungsdaten gesammelt oder an externe Dienste übertragen. Persönliche Einstellungen bleiben im Browser.
 
 ### Veröffentlichte Dateien
